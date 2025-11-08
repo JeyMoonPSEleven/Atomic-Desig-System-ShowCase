@@ -1,10 +1,11 @@
 /* src/design-system/styles/globals.css - SISTEMA CSS 2025 + TAILWIND INTEGRADO */
 
-/* Tailwind v4 CSS-first directive - DEBE IR PRIMERO */
-@import 'tailwindcss';
-
-/* Importar variables CSS después de Tailwind */
+/* IMPORTANTE: Las variables CSS deben estar disponibles ANTES de Tailwind */
+/* Importar variables CSS PRIMERO */
 @import url('./variables.css');
+
+/* Tailwind v4 CSS-first directive */
+@import 'tailwindcss';
 
 /* Configuración de tema de Tailwind v4 usando @theme */
 @theme {
