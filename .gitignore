@@ -39,6 +39,3 @@ lerna-debug.log*
 # Vite
 .vite
 
-# Git
-.git
-

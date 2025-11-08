@@ -92,3 +92,13 @@ Este es un proyecto interno. Para contribuir, sigue las guías de Atomic Design 
 
 Uso interno del proyecto.
 
+## 🔗 Repositorio
+
+- **GitHub**: [https://github.com/JeyMoonPSEleven/Atomic-Desig-System-ShowCase](https://github.com/JeyMoonPSEleven/Atomic-Desig-System-ShowCase)
+
+## 📚 Documentación Adicional
+
+- [Guía de Git](./GIT_SETUP.md) - Configuración y comandos Git
+- [Guía de Contribución](./CONTRIBUTING.md) - Cómo contribuir al proyecto
+- [Guía Atomic Design](./Guia%20Atomic%20Design.txt) - Metodología y mejores prácticas
+
