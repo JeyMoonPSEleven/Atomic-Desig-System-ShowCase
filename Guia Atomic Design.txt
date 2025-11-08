@@ -1,0 +1,113 @@
+Esta guía exhaustiva está elaborada para los agentes de IA de Cursor IDE, como el modelo **Composer**, que está optimizado para la inteligencia, la velocidad en la ingeniería de software, y la adherencia a las abstracciones existentes y prácticas de desarrollo.
+
+El objetivo es transformar la estructura de archivos existente en una biblioteca de componentes React **completa, escalable y altamente personalizable**, siguiendo estrictamente la metodología Atomic Design (Átomos, Moléculas, Organismos, Plantillas y Páginas).
+
+---
+
+## Guía de Implementación y Optimización para Agentes de IA (Sin Storybook)
+
+### Mandato de Estructura y Herramientas
+
+El agente Composer debe analizar y utilizar la estructura de carpetas existente en `src/design-system/atomic/` para asegurar la coherencia arquitectónica.
+
+#### 1. Estructura de Componentes Base
+La estructura actual es modular y se adhiere a los cinco niveles de Atomic Design:
+*   `src/design-system/atomic/atoms/`
+*   `src/design-system/atomic/molecules/`
+*   `src/design-system/atomic/organisms/`
+*   `src/design-system/atomic/templates/`
+*   `src/design-system/atomic/pages/`
+
+**Acción del Agente (A.I.):**
+*   **Prioridad Absoluta (Sin Storybook):** Se observa la existencia de archivos `.stories.tsx` en numerosos componentes (ej. `Avatar.stories.tsx`, `Button.stories.tsx`, `Header.stories.tsx`) a lo largo de la estructura. El agente debe **ignorar, eliminar o marcar como obsoletos** todos los archivos `.stories.tsx` y **depender exclusivamente** de las interfaces de TypeScript (`.types.ts`) y las pruebas unitarias (`.test.tsx`) para la documentación y validación, tal como se solicitó.
+*   **Consistencia de Archivos:** Cada componente debe mantener la siguiente estructura clave:
+    *   `[Nombre].tsx`: Implementación en React.
+    *   `[Nombre].types.ts`: Tipado estricto (documentación viva).
+    *   `[Nombre].test.tsx`: Pruebas unitarias (Jest/RTL).
+    *   `[Nombre].module.css`: Para estilos de módulo CSS específicos, si es necesario, además de Tailwind.
+
+### Fase 1: Optimización de la Fundación Atómica (Tokens de Diseño)
+
+La personalización completa y los cambios en cascada dependen de una base de diseño semántica y unificada.
+
+**Tareas del Agente:**
+
+1.  **Auditoría y Estandarización de Tokens:**
+    *   Revisar y definir la gramática visual (tipografía, colores, espaciados, radios, sombras) en `src/design-system/styles/variables.css`.
+    *   **Implementación Clave:** Asegurar que estos tokens se definan semánticamente utilizando la directiva `@theme` de Tailwind v4. Esto evita el "caos de color" y garantiza que los cambios de marca se apliquen globalmente con una sola modificación.
+    *   **Paleta Semántica:** Usar nombres basados en el propósito (ej., `bg-primary`, `text-content-primary`, `bg-danger`) en lugar de valores literales (ej., `violet-500` o `blue-500`), restringiendo las opciones del desarrollador a colores aprobados por el sistema de diseño.
+
+2.  **Utilidades de Clase (`src/lib/utils.ts`):**
+    *   El agente debe implementar o verificar una función de utilidad (a menudo llamada `cn`) que combine `clsx` y `tailwind-merge`. Esto permite a los consumidores del componente sobrescribir o añadir clases de forma segura sin generar conflictos con los estilos base, manteniendo la coherencia.
+    *   Aprovechar los *hooks* de utilidad existentes (`useTokens`, `useTheme`, etc.) para una integración más profunda.
+
+### Fase 2: Análisis y Mejora de Componentes Atómicos (Atoms)
+
+Los átomos son los bloques fundamentales que definen el aspecto y la funcionalidad básica.
+
+**Análisis de Componentes Existentes (Catálogo Completo):**
+*   **Interactivos:** `Checkbox`, `Input`, `Radio`, `Select`, `Slider`, `Switch`.
+*   **Visuales:** `Avatar`, `Badge`, `ColorSwatch`, `Divider`, `Heading`, `Icon`, `Image`, `Link`, `Logo`, `Progress`, `Spinner`, `Text`, `Video`.
+
+**Instrucciones de Mejora para el Agente:**
+
+1.  **Tipificación de Propiedades y Estados (Key):** Para cada átomo, el agente debe asegurarse de que el archivo `.types.ts` defina exhaustivamente las propiedades (props) para todas las variantes posibles, tamaños y estados de interacción (`hover`, `active`, `disabled`). Esto utiliza TypeScript para un desarrollo con tipado seguro (DX).
+2.  **Manejo de Variantes Escalable:** Al implementar el `Button` (o cualquier otro átomo con variantes), se recomienda utilizar un sistema de gestión de variantes como **`class-variance-authority` (CVA)** para proporcionar variantes tipo-seguras (`variant`, `size`) y simplificar la lógica de estilo en el archivo `.tsx`.
+3.  **Accesibilidad (A11y) desde la Base:** Dado que el agente Composer aprende a adherirse a las prácticas de ingeniería, debe incluir atributos de accesibilidad (`aria-*`, `focus` visible) en los átomos interactivos. Revisar que el `ColorSwatch` átomo tenga un contraste de color correcto para cumplir con los estándares.
+
+### Fase 3: Composición Modular (Moléculas y Organismos)
+
+Aquí se aplica la combinación lógica de los átomos para formar secciones coherentes de la interfaz.
+
+#### Moléculas (Molecules)
+Deben ser unidades funcionales simples (ej. `SearchBar`, `Dropdown`).
+**Catálogo Existente (a completar/mejorar):** `Accordion`, `Alert`, `Breadcrumb`, `Card`, `DatePicker`, `Dropdown`, `Field`, `FileUpload`, `GroupButton`, `Menu`, `Modal`, `Pagination`, `Rating`, `SearchBar`, `Stepper`, `Tabs`, `Timeline`, `Toast`, `Tooltip`.
+
+#### Organismos (Organisms)
+Representan secciones complejas y autosuficientes de la interfaz (ej. `Header`, `Form`).
+**Catálogo Existente (a completar/mejorar):** `Calendar`, `Carousel`, `Chart`, `Dashboard`, `DataTable`, `Filters`, `Footer`, `Form`, `Gallery`, `Header`, `Hero`, `Navigation`, `Notifications`, `Settings`, `Sidebar`, `Table`, `Toolbar`, `UserProfile`.
+
+**Instrucciones de Mejora para el Agente (Aplicable a ambos niveles):**
+
+1.  **Variantes Imprescindibles:** El agente debe dotar a los organismos de *props* semánticas y flexibles (`columns`, `theme`, `variant`). Esto es esencial para la customización y para evitar el error común de **clonar organismos** en lugar de usar variantes.
+2.  **Anidación Lógica:** Asegurar que los organismos se compongan únicamente de moléculas y átomos definidos previamente. Por ejemplo, el organismo `Header` debe componerse de un átomo `Logo` y una molécula `Navigation` o `SearchBar`.
+3.  **Ritmo Vertical Consistente:** Utilizar tokens de espaciado predefinidos (ej., `py-section-md`, `container`) en los organismos y plantillas para mantener el ritmo visual y evitar espaciados incoherentes (`py-14` vs `py-20`).
+
+### Fase 4: Estructura de Layout (Plantillas y Páginas)
+
+Estos niveles articulan el diseño completo y sirven para la validación final.
+
+**Catálogo de Plantillas Existentes:** `Admin`, `Authentication`, `Blog`, `Dashboard`, `Documentation`, `Error`, `Landing`, `Maintenance`, `Profile`, `Settings`.
+**Catálogo de Páginas Existentes (para validación):** `About`, `Changelog`, `Components`, `Documentation`, `Examples`, `Home`, `Icons`, `Playground`, `Themes`, `Tokens`.
+
+**Mandato para el Agente:**
+
+1.  **Plantillas (Estructura, no Contenido):** Las plantillas deben centrarse en la disposición esquelética de los organismos, definiendo la estructura subyacente del contenido (ej. el espacio para una imagen o la longitud de un titular).
+2.  **Páginas (Validación y Resiliencia):** Las páginas deben poblar las plantillas con contenido real para validar cómo se comporta el sistema bajo diferentes escenarios (ej. titulares largos vs. cortos, diferentes estados de usuario).
+3.  **Regla Estricta:** El agente debe adherirse a la **regla de oro** de que **una página no debe requerir clases nuevas o estilos *ad hoc***. Si se requiere un estilo en la página, esto significa que falta una variante o configuración en un organismo o molécula de nivel inferior, y el agente debe corregir el componente base.
+
+### Fase 5: Aseguramiento de la Calidad y Documentación (Workflow sin Storybook)
+
+Dado que se excluye Storybook, la coherencia se mantendrá a través de pruebas rigurosas y la documentación integrada en el código.
+
+**Tareas del Agente Composer:**
+
+1.  **Documentación por Tipado (DX):**
+    *   La documentación funcional del componente, las variantes y los casos de uso deben estar capturados en las interfaces de TypeScript (`.types.ts`). TypeScript, como JavaScript con sintaxis para tipos, facilita la integración con el editor, la detección temprana de errores y mejora el autocompletado.
+2.  **Testing Riguroso (Jest y RTL):**
+    *   El agente debe enfocarse en completar los archivos de prueba existentes (`.test.tsx`) para cada componente. El modelo Composer está entrenado para realizar búsquedas complejas, corregir errores de *linter* y escribir y ejecutar pruebas unitarias.
+    *   **Verificación de Pruebas:** Las pruebas (utilizando Jest y React Testing Library) deben verificar:
+        *   Renderizado básico y correcto.
+        *   Comportamiento funcional (ej., simulación de `click` o interacción de formularios).
+        *   Aplicación correcta de clases de Tailwind/variantes dinámicas (utilizando `classList.contains()` en el DOM).
+3.  **Auditoría de Inconsistencias (Mejora Continua):**
+    *   El agente debe llevar a cabo un proceso de auditoría similar a un *inventario de interfaz*, pero centrado en los componentes ya creados, para identificar cuáles pueden fusionarse o requieren una mejor definición de variantes.
+    *   Si se detecta una inconsistencia visual o de código entre componentes similares (ej. dos estilos de `Card` o `Input` diferentes), el agente debe refactorizar ambos para que usen un único átomo o molécula con variantes tipificadas.
+
+***
+
+### Resumen: Un Sistema para la Customización
+
+La biblioteca de componentes resultante actúa como un sistema de **piezas de ingeniería de precisión**. Si desea personalizar un aspecto del sitio web (el color primario, el tamaño de los encabezados), no se debe modificar la pieza individual en cada página, sino la **definición del átomo** o el **Token de Diseño**.
+
+Esta dependencia jerárquica garantiza que un único cambio en el nivel de los **Tokens** o **Átomos** se propague de manera predecible y consistente a través de las **Moléculas**, **Organismos** y, finalmente, a todas las **Páginas**. Utilizar **TypeScript** y **pruebas unitarias** como base de documentación, en ausencia de Storybook, asegura que el equipo tenga una fuente de verdad verificable sobre el uso y las propiedades de cada componente.
