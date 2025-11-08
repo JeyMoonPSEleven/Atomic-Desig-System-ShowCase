@@ -4,6 +4,7 @@ import { cva } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { ButtonProps } from './Button.types';
 import { cn } from '../../../utils/cn';
+import { microInteractions, transitions } from '../../../hooks/useAnimation';
 
 /**
  * Definición de variantes con cva (Class Variance Authority)
@@ -62,9 +63,9 @@ export const Button = React.memo<ButtonProps>(({
       className={buttonClasses}
       disabled={disabled || isLoading}
       aria-busy={isLoading}
-      whileHover={{ scale: disabled || isLoading ? 1 : 1.02 }}
-      whileTap={{ scale: disabled || isLoading ? 1 : 0.98 }}
-      transition={{ duration: 0.2, ease: 'easeOut' }}
+      whileHover={disabled || isLoading ? {} : microInteractions.hover}
+      whileTap={disabled || isLoading ? {} : microInteractions.tap}
+      transition={transitions.fast}
       onClick={onClick}
       {...(restProps as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >

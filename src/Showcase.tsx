@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
 import { ThemeToggle } from '@/contexts/ThemeContext';
+import { animationPresets, transitions } from '@/hooks/useAnimation';
 
 // Atoms
 import {
@@ -469,18 +470,18 @@ const Showcase: React.FC = () => {
 
       {/* Contenido Principal (Template/Page) */}
       <main className="col-start-2 col-end-3 row-start-2 row-end-3 p-xl overflow-y-auto">
-        <motion.div
-          key={activeSection}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          {activeSection === 'atoms' && renderAtoms()}
-          {activeSection === 'molecules' && renderMolecules()}
-          {activeSection === 'organisms' && renderOrganisms()}
-          {activeSection === 'templates' && renderTemplates()}
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection}
+            {...animationPresets.fadeInUp}
+            transition={transitions.base}
+          >
+            {activeSection === 'atoms' && renderAtoms()}
+            {activeSection === 'molecules' && renderMolecules()}
+            {activeSection === 'organisms' && renderOrganisms()}
+            {activeSection === 'templates' && renderTemplates()}
+          </motion.div>
+        </AnimatePresence>
       </main>
     </div>
   );

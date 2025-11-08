@@ -1,4 +1,5 @@
-// src/design-system/hooks/index.ts
-export { useLocalStorage } from './useLocalStorage'
-export { useMediaQuery } from './useMediaQuery'
-export { useDebounce } from './useDebounce'
+/**
+ * Exportar todos los hooks del design system
+ */
+
+export * from './useAnimation';

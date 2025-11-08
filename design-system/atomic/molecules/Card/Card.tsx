@@ -4,6 +4,7 @@ import { cva } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { CardProps } from './Card.types';
 import { cn } from '../../../utils/cn';
+import { animationPresets, transitions, microInteractions } from '../../../hooks/useAnimation';
 
 /**
  * Definición de variantes con CVA (Class Variance Authority)
@@ -74,15 +75,9 @@ export const Card = React.memo<CardProps>(({
   return (
     <motion.div
       className={cardClasses}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={hover ? { y: -4, scale: 1.01 } : {}}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        duration: 0.3
-      }}
+      {...animationPresets.fadeInUp}
+      whileHover={hover ? { ...microInteractions.hoverLift, scale: 1.01 } : {}}
+      transition={transitions.spring}
       {...props}
     >
       {header && (
