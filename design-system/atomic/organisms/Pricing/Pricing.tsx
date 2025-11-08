@@ -121,7 +121,7 @@ export const Pricing = React.memo<PricingProps>(({
           <Text variant="small" color="accent" className="uppercase tracking-wider font-semibold mb-sm">
             {subtitle}
           </Text>
-          <Heading level={2} variant="heading" className="text-text-primary mb-md">
+          <Heading level={2} variant="heading" className="text-foreground mb-md">
             {title}
           </Heading>
           <Text variant="body" color="secondary">
@@ -160,7 +160,7 @@ export const Pricing = React.memo<PricingProps>(({
 
               {/* Plan Header */}
               <div className="text-center mb-lg">
-                <Heading level={3} variant="subheading" className="text-text-primary mb-sm">
+                <Heading level={3} variant="subheading" className="text-foreground mb-sm">
                   {plan.name}
                 </Heading>
                 <Text variant="body" color="secondary" className="mb-md">
@@ -170,11 +170,11 @@ export const Pricing = React.memo<PricingProps>(({
                 {/* Price */}
                 <div className="flex items-baseline justify-center gap-xs">
                   {showCurrency && (
-                    <span className="text-2xl font-bold text-text-primary">{plan.currency}</span>
+                    <span className="text-2xl font-bold text-foreground">{plan.currency}</span>
                   )}
                   <span className="text-5xl font-bold text-primary">{plan.price}</span>
                   {showPeriod && (
-                    <span className="text-lg text-text-secondary">{plan.period}</span>
+                    <span className="text-lg text-foreground-secondary">{plan.period}</span>
                   )}
                 </div>
               </div>
@@ -184,7 +184,7 @@ export const Pricing = React.memo<PricingProps>(({
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-sm">
                     <Icon name="CheckCircle" size="small" className="text-success mt-1 flex-shrink-0" />
-                    <Text variant="small" className="text-text-secondary">
+                    <Text variant="small" className="text-foreground-secondary">
                       {feature}
                     </Text>
                   </li>

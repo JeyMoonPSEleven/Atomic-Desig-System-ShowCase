@@ -62,7 +62,7 @@ export const Header = React.memo<HeaderProps>(({
       <Link
         href={item.href}
         className={cn(
-          'text-text-primary hover:text-primary transition-colors py-sm px-md rounded-md hover:bg-background-secondary',
+          'text-foreground hover:text-primary transition-colors py-sm px-md rounded-md hover:bg-background-secondary',
           'flex items-center gap-xs'
         )}
       >
@@ -94,7 +94,7 @@ export const Header = React.memo<HeaderProps>(({
           {phone && (
             <Link 
               href={`tel:${phone}`}
-              className="flex items-center gap-xs text-text-secondary hover:text-primary transition-colors"
+              className="flex items-center gap-xs text-foreground-secondary hover:text-primary transition-colors"
             >
               <Icon name="Phone" size="small" />
               <span className="text-sm">{phone}</span>
@@ -144,7 +144,7 @@ export const Header = React.memo<HeaderProps>(({
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="flex items-center justify-between py-md px-md rounded-md hover:bg-background-secondary text-text-primary transition-colors"
+                        className="flex items-center justify-between py-md px-md rounded-md hover:bg-background-secondary text-foreground transition-colors"
                       >
                         <span>{item.label}</span>
                         {item.children && item.children.length > 0 && (
@@ -160,14 +160,14 @@ export const Header = React.memo<HeaderProps>(({
                 {phone && (
                   <Link
                     href={`tel:${phone}`}
-                    className="flex items-center gap-sm text-text-secondary hover:text-primary transition-colors"
+                    className="flex items-center gap-sm text-foreground-secondary hover:text-primary transition-colors"
                   >
                     <Icon name="Phone" size="small" />
                     <span>{phone}</span>
                   </Link>
                 )}
                 {address && (
-                  <div className="flex items-center gap-sm text-text-secondary">
+                  <div className="flex items-center gap-sm text-foreground-secondary">
                     <Icon name="MapPin" size="small" />
                     <span className="text-sm">{address}</span>
                   </div>
