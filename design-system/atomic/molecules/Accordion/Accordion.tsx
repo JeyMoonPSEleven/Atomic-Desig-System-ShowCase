@@ -49,13 +49,13 @@ export const Accordion: React.FC<AccordionProps> = ({
                             aria-expanded={isOpen}
                             aria-controls={`accordion-content-${item.id}`}
                         >
-                            <span className="font-medium text-text-primary">{item.title}</span>
+                            <span className="font-medium text-foreground">{item.title}</span>
                             <Icon
                                 name="ChevronDown"
                                 className={cn(
                                     'w-5 h-5 transition-transform duration-200',
                                     isOpen && 'transform rotate-180',
-                                    isDisabled && 'text-text-muted'
+                                    isDisabled && 'text-foreground-muted'
                                 )}
                             />
                         </button>
@@ -71,7 +71,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                             }}
                         >
                             <div className={cn(
-                                'p-md text-text-secondary',
+                                'p-md text-foreground-secondary',
                                 variant === 'bordered' && 'border-t border-border'
                             )}>
                                 {item.content}

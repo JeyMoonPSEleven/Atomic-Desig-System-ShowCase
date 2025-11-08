@@ -1,10 +1,41 @@
 /* src/design-system/styles/globals.css - SISTEMA CSS 2025 + TAILWIND INTEGRADO */
 
-/* Importar todos los tokens CSS existentes */
+/* Tailwind v4 CSS-first directive - DEBE IR PRIMERO */
+@import 'tailwindcss';
+
+/* Importar variables CSS después de Tailwind */
 @import url('./variables.css');
 
-/* Tailwind v4 CSS-first directive */
-@import 'tailwindcss';
+/* Configuración de tema de Tailwind v4 usando @theme */
+@theme {
+  /* Colores semánticos - Mapeo de variables CSS */
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-success: var(--color-success-500);
+  --color-warning: var(--color-warning-500);
+  --color-danger: var(--color-danger-500);
+  --color-info: var(--color-info-500);
+  
+  /* Colores de fondo */
+  --color-background: var(--color-background-primary);
+  --color-background-secondary: var(--color-background-secondary);
+  --color-background-tertiary: var(--color-background-tertiary);
+  --color-background-body: var(--color-background-body);
+  
+  /* Colores de texto */
+  --color-foreground: var(--color-text-primary);
+  --color-foreground-secondary: var(--color-text-secondary);
+  --color-foreground-muted: var(--color-text-muted);
+  --color-foreground-accent: var(--color-text-accent);
+  
+  /* Colores de borde */
+  --color-border: var(--color-border-primary);
+  --color-border-input: var(--color-border-input);
+  --color-border-focus: var(--color-border-focus);
+}
+
+/* Utilidades de Tailwind usando variables CSS directamente (respaldo) */
+@import url('./tailwind-utilities.css');
 
 /* === RESET LAYER === */
 @layer reset {

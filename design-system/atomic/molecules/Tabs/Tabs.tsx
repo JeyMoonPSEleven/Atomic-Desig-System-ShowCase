@@ -46,23 +46,23 @@ const tabButtonVariants = cva(
       },
       active: {
         true: '',
-        false: 'text-text-secondary',
+        false: 'text-foreground-secondary',
       },
       disabled: {
         true: 'opacity-50 cursor-not-allowed',
-        false: 'hover:text-text-primary',
+        false: 'hover:text-foreground',
       },
     },
     compoundVariants: [
       {
         variant: 'default',
         active: true,
-        className: 'bg-primary-100 text-primary-700',
+        className: 'bg-primary-50 text-primary-700',
       },
       {
         variant: 'pills',
         active: true,
-        className: 'bg-background text-primary-700 shadow-sm',
+        className: 'bg-background text-primary shadow-sm',
       },
       {
         variant: 'underline',

@@ -1,0 +1,68 @@
+/* Utilidades de Tailwind usando variables CSS directamente */
+/* Esto asegura que las clases funcionen incluso si tailwind.config.ts no se procesa correctamente */
+
+@layer utilities {
+  /* Colores de fondo semánticos */
+  .bg-primary { background-color: var(--color-primary-500) !important; }
+  .bg-secondary { background-color: var(--color-secondary-500) !important; }
+  .bg-success { background-color: var(--color-success-500) !important; }
+  .bg-danger { background-color: var(--color-danger-500) !important; }
+  .bg-warning { background-color: var(--color-warning-500) !important; }
+  .bg-info { background-color: var(--color-info-500) !important; }
+  .bg-background { background-color: var(--color-background-primary) !important; }
+  .bg-background-secondary { background-color: var(--color-background-secondary) !important; }
+  .bg-background-tertiary { background-color: var(--color-background-tertiary) !important; }
+  .bg-background-body { background-color: var(--color-background-body) !important; }
+
+  /* Colores de texto semánticos */
+  .text-foreground { color: var(--color-text-primary) !important; }
+  .text-foreground-secondary { color: var(--color-text-secondary) !important; }
+  .text-foreground-muted { color: var(--color-text-muted) !important; }
+  .text-foreground-accent { color: var(--color-text-accent) !important; }
+  .text-primary { color: var(--color-primary-500) !important; }
+  .text-secondary { color: var(--color-secondary-500) !important; }
+  .text-success { color: var(--color-success-500) !important; }
+  .text-danger { color: var(--color-danger-500) !important; }
+  .text-warning { color: var(--color-warning-500) !important; }
+  .text-info { color: var(--color-info-500) !important; }
+  .text-primary-foreground { color: var(--color-text-on-primary) !important; }
+  .text-secondary-foreground { color: var(--color-text-on-secondary) !important; }
+  .text-success-foreground { color: var(--color-text-on-success) !important; }
+  .text-danger-foreground { color: var(--color-text-on-danger) !important; }
+  .text-warning-foreground { color: var(--color-text-on-warning) !important; }
+  .text-info-foreground { color: var(--color-text-on-info) !important; }
+
+  /* Colores de borde semánticos */
+  .border-border { border-color: var(--color-border-primary) !important; }
+  .border-border-primary { border-color: var(--color-border-primary) !important; }
+  .border-border-secondary { border-color: var(--color-border-secondary) !important; }
+  .border-border-input { border-color: var(--color-border-input) !important; }
+  .border-border-focus { border-color: var(--color-border-focus) !important; }
+  .border-primary { border-color: var(--color-primary-500) !important; }
+  .border-secondary { border-color: var(--color-secondary-500) !important; }
+  .border-success { border-color: var(--color-success-500) !important; }
+  .border-danger { border-color: var(--color-danger-500) !important; }
+  .border-warning { border-color: var(--color-warning-500) !important; }
+  .border-info { border-color: var(--color-info-500) !important; }
+
+  /* Variantes de colores primarios */
+  .bg-primary-600 { background-color: var(--color-primary-600) !important; }
+  .bg-primary-700 { background-color: var(--color-primary-700) !important; }
+  .bg-secondary-600 { background-color: var(--color-secondary-600) !important; }
+  .bg-secondary-700 { background-color: var(--color-secondary-700) !important; }
+  .bg-success-600 { background-color: var(--color-success-600) !important; }
+  .bg-success-700 { background-color: var(--color-success-700) !important; }
+  .bg-danger-600 { background-color: var(--color-danger-600) !important; }
+  .bg-danger-700 { background-color: var(--color-danger-700) !important; }
+  .bg-warning-600 { background-color: var(--color-warning-600) !important; }
+  .bg-warning-700 { background-color: var(--color-warning-700) !important; }
+  .bg-info-600 { background-color: var(--color-info-600) !important; }
+  .bg-info-700 { background-color: var(--color-info-700) !important; }
+  .text-primary-600 { color: var(--color-primary-600) !important; }
+
+  /* Sombras */
+  .shadow-focus { box-shadow: var(--shadow-focus) !important; }
+  .shadow-focus-danger { box-shadow: var(--shadow-focus-danger) !important; }
+  .shadow-focus-success { box-shadow: var(--shadow-focus-success) !important; }
+}
+

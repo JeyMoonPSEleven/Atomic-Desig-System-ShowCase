@@ -15,9 +15,9 @@ const tooltipVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-gray-900 text-white',
-        dark: 'bg-gray-900 text-white',
-        light: 'bg-white text-gray-900 border border-border',
+        default: 'bg-gray-900 text-primary-foreground',
+        dark: 'bg-gray-900 text-primary-foreground',
+        light: 'bg-background text-foreground border border-border',
       },
       position: {
         top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
@@ -40,7 +40,7 @@ const arrowVariants = cva(
       variant: {
         default: 'bg-gray-900',
         dark: 'bg-gray-900',
-        light: 'bg-white border border-border',
+        light: 'bg-background border border-border',
       },
       position: {
         top: 'top-full left-1/2 -translate-x-1/2 -mt-1',

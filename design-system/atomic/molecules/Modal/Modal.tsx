@@ -40,12 +40,12 @@ export const Modal: React.FC<ModalProps> = ({
     );
 
     const titleClasses = cn(
-        'text-lg font-bold text-text-primary m-0'
+        'text-lg font-bold text-foreground m-0'
     );
 
     const closeButtonClasses = cn(
-        'bg-transparent border-none cursor-pointer p-sm rounded-sm text-text-muted transition-all',
-        'hover:bg-background-secondary hover:text-text-primary',
+        'bg-transparent border-none cursor-pointer p-sm rounded-sm text-foreground-muted transition-all',
+        'hover:bg-background-secondary hover:text-foreground',
         'focus:outline-none focus:shadow-focus'
     );
 

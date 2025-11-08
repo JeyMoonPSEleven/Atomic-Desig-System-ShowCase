@@ -1,11 +1,7 @@
 /* src/design-system/styles/variables.css - SISTEMA CSS 2025 AVANZADO */
 
-/* === CASCADE LAYERS === */
-@layer reset, tokens, base, components, utilities, overrides;
-
 /* === TOKENS LAYER === */
-@layer tokens {
-  :root {
+:root {
     /* === BREAKPOINTS RESPONSIVE === */
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
@@ -588,7 +584,6 @@
       --duration-slowest: 0.01ms;
     }
   }
-}
 
 /* === BASE LAYER === */
 @layer base {

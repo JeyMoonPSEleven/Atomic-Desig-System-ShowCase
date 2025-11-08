@@ -28,9 +28,9 @@ export const Slider: React.FC<SliderProps> = ({
     );
 
     const labelClasses = cn(
-        'text-sm font-medium text-text-primary mb-xs',
-        disabled && 'text-text-muted',
-        error && 'text-danger-600',
+        'text-sm font-medium text-foreground mb-xs',
+        disabled && 'text-foreground-muted',
+        error && 'text-danger',
 
         // Tamaños de texto
         size === 'small' && 'text-xs',
@@ -44,7 +44,7 @@ export const Slider: React.FC<SliderProps> = ({
     const trackClasses = cn(
         'relative bg-background-secondary rounded-full cursor-pointer transition-all flex-1',
         disabled && 'cursor-not-allowed opacity-60',
-        error && 'bg-danger-200',
+        error && 'bg-danger-50',
 
         // Tamaños del track
         size === 'small' && 'h-1',
@@ -69,14 +69,14 @@ export const Slider: React.FC<SliderProps> = ({
     );
 
     const valueClasses = cn(
-        'text-sm font-medium text-text-secondary min-w-12 text-right',
+        'text-sm font-medium text-foreground-secondary min-w-12 text-right',
         size === 'small' && 'text-xs',
         size === 'large' && 'text-base'
     );
 
     const helperTextClasses = cn(
-        'text-sm text-text-muted mt-xs',
-        error && 'text-danger-600'
+        'text-sm text-foreground-muted mt-xs',
+        error && 'text-danger'
     );
 
     return (

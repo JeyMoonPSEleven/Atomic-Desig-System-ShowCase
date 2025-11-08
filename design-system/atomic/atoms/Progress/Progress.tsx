@@ -28,11 +28,11 @@ export const Progress: React.FC<ProgressProps> = ({
     );
 
     const labelClasses = cn(
-        'text-sm font-medium text-text-primary'
+        'text-sm font-medium text-foreground'
     );
 
     const percentageClasses = cn(
-        'text-sm font-semibold text-text-secondary font-mono'
+        'text-sm font-semibold text-foreground-secondary font-mono'
     );
 
     const trackClasses = cn(
