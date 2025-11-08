@@ -37,7 +37,7 @@ export const Radio = React.memo<RadioProps>(({
         'hover:not-disabled:border-primary',
         'focus:outline-none focus:shadow-focus',
         'disabled:cursor-not-allowed disabled:bg-background-secondary',
-        error && 'border-danger-500',
+        error && 'border-danger',
 
         // Tamaños
         size === 'small' && 'w-4 h-4',
@@ -45,9 +45,9 @@ export const Radio = React.memo<RadioProps>(({
     );
 
     const labelClasses = cn(
-        'text-base text-text-primary cursor-pointer select-none flex-1',
-        disabled && 'cursor-not-allowed text-text-muted',
-        error && 'text-danger-600',
+        'text-base text-foreground cursor-pointer select-none flex-1',
+        disabled && 'cursor-not-allowed text-foreground-muted',
+        error && 'text-danger',
 
         // Tamaños de texto
         size === 'small' && 'text-sm',
@@ -55,8 +55,8 @@ export const Radio = React.memo<RadioProps>(({
     );
 
     const helperTextClasses = cn(
-        'text-sm text-text-muted mt-xs',
-        error && 'text-danger-600'
+        'text-sm text-foreground-muted mt-xs',
+        error && 'text-danger'
     );
 
     const handleValueChange = (newValue: string) => {

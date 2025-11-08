@@ -10,12 +10,12 @@ import { cn } from '../../../utils/cn';
  * Para Input, manejamos variantes de estilo, tamaño y estados
  */
 const inputVariants = cva(
-    'w-full font-base leading-normal bg-background border border-border rounded-md text-text-primary transition-all appearance-none outline-none focus:border-border-focus focus:shadow-focus focus:bg-background hover:not-disabled:not-focus:border-gray-400 sm:text-sm',
+    'w-full font-base leading-normal bg-background border border-border rounded-md text-foreground transition-all appearance-none outline-none focus:border-border-focus focus:shadow-focus focus:bg-background hover:not-disabled:not-focus:border-border-input sm:text-sm',
     {
         variants: {
             variant: {
                 default: '',
-                filled: 'bg-gray-100 border-0 focus:bg-background focus:shadow-inner',
+                filled: 'bg-background-secondary border-0 focus:bg-background focus:shadow-inner',
                 outlined: 'border-2',
             },
             size: {
@@ -25,8 +25,8 @@ const inputVariants = cva(
             },
             state: {
                 default: '',
-                error: 'border-danger-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]',
-                success: 'border-success-500 focus:shadow-[0_0_0_3px_rgba(34,197,94,0.1)]',
+                error: 'border-danger focus:shadow-focus-danger',
+                success: 'border-success focus:shadow-focus-success',
             },
         },
         defaultVariants: {
@@ -68,21 +68,21 @@ export const Input: React.FC<InputProps> = React.memo(({
             size,
             state: inputState
         }),
-        disabled && 'bg-gray-100 text-text-muted cursor-not-allowed opacity-60',
+        disabled && 'bg-background-secondary text-foreground-muted cursor-not-allowed opacity-60',
         className
     );
 
     const containerClasses = 'flex flex-col gap-xs';
 
     const labelClasses = cn(
-        'text-sm font-medium text-text-primary',
-        error && 'text-danger-600',
-        disabled && 'text-text-muted'
+        'text-sm font-medium text-foreground',
+        error && 'text-danger',
+        disabled && 'text-foreground-muted'
     );
 
     const helperTextClasses = cn(
-        'text-xs text-text-muted',
-        error && 'text-danger-600'
+        'text-xs text-foreground-muted',
+        error && 'text-danger'
     );
 
     return (
@@ -101,7 +101,7 @@ export const Input: React.FC<InputProps> = React.memo(({
                     transition={{ duration: 0.2 }}
                 >
                     {label}
-                    {required && <span className="text-danger-500 ml-xs">*</span>}
+                    {required && <span className="text-danger ml-xs">*</span>}
                 </motion.label>
             )}
             <motion.input

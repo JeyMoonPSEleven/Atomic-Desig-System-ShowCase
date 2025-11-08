@@ -30,6 +30,7 @@ const Showcase: React.FC = () => {
     { id: 'templates', label: 'Templates', icon: 'Layout' },
   ];
 
+
   const renderAtoms = () => (
     <div className="space-y-xl">
       <Heading level={2} variant="display">Átomos</Heading>
@@ -416,43 +417,63 @@ const Showcase: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background-body">
-      {/* Sidebar Navigation */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-background border-r border-border p-lg overflow-y-auto z-10">
-        <div className="mb-xl">
-          <Heading level={1} className="text-primary mb-xs">Atomic DS</Heading>
-          <Text variant="small" color="muted">Design System Showcase</Text>
-        </div>
-
-        <nav className="space-y-xs">
-          {sections.map((section) => (
-            <button
-              key={section.id}
-              onClick={() => setActiveSection(section.id)}
-              className={cn(
-                'w-full text-left px-md py-sm rounded-md transition-colors flex items-center gap-sm',
-                activeSection === section.id
-                  ? 'bg-primary text-text-on-primary'
-                  : 'hover:bg-background-secondary text-text-primary'
-              )}
-            >
-              <Icon name={section.icon as any} size="small" />
-              <span>{section.label}</span>
-            </button>
-          ))}
-        </nav>
-
-        <div className="mt-xl pt-xl border-t border-border">
-          <ThemeToggle variant="switch" showLabel />
-        </div>
+    <div className="grid min-h-screen grid-cols-[280px_1fr] grid-rows-[auto_1fr] antialiased bg-background-body">
+      {/* Sidebar (Organismo) */}
+      <aside className="col-start-1 col-end-2 row-start-1 row-end-3 flex flex-col w-full p-lg bg-background border-r border-border">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col h-full"
+        >
+          <Heading level={1} variant="display" className="mb-xl text-primary">
+            Atomic DS
+          </Heading>
+          <nav className="flex flex-col space-y-sm">
+            {sections.map((section) => (
+              <motion.button
+                key={section.id}
+                onClick={() => setActiveSection(section.id)}
+                className={cn(
+                  'text-left px-md py-sm rounded-md font-medium transition-colors',
+                  activeSection === section.id
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-foreground-muted hover:text-foreground hover:bg-background-secondary'
+                )}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {section.label}
+              </motion.button>
+            ))}
+          </nav>
+          <div className="mt-auto pt-xl">
+            <ThemeToggle />
+          </div>
+        </motion.div>
       </aside>
 
-      {/* Main Content */}
-      <main className="ml-64 p-xl">
+      {/* Header (Organismo) */}
+      <header className="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-between h-16 px-xl border-b border-border bg-background">
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-foreground-muted font-medium"
+        >
+          Design System Showcase
+        </motion.span>
+        <div className="flex items-center gap-md">
+          <Badge variant="primary">v1.0.0</Badge>
+        </div>
+      </header>
+
+      {/* Contenido Principal (Template/Page) */}
+      <main className="col-start-2 col-end-3 row-start-2 row-end-3 p-xl overflow-y-auto">
         <motion.div
           key={activeSection}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
           {activeSection === 'atoms' && renderAtoms()}

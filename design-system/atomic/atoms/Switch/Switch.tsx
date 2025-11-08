@@ -71,9 +71,9 @@ export const Switch: React.FC<SwitchProps> = ({
     );
 
     const labelClasses = cn(
-        'text-base text-text-primary cursor-pointer select-none flex-1',
-        disabled && 'cursor-not-allowed text-text-muted',
-        error && 'text-danger-600',
+        'text-base text-foreground cursor-pointer select-none flex-1',
+        disabled && 'cursor-not-allowed text-foreground-muted',
+        error && 'text-danger',
 
         // Tamaños de texto
         size === 'small' && 'text-sm',
@@ -81,8 +81,8 @@ export const Switch: React.FC<SwitchProps> = ({
     );
 
     const helperTextClasses = cn(
-        'text-sm text-text-muted mt-xs',
-        error && 'text-danger-600'
+        'text-sm text-foreground-muted mt-xs',
+        error && 'text-danger'
     );
 
     return (
@@ -96,7 +96,7 @@ export const Switch: React.FC<SwitchProps> = ({
                     disabled={disabled}
                     required={required}
                     className={switchRootClasses}
-                    {...props}
+                    {...(props as Omit<React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>, 'checked' | 'defaultChecked' | 'onCheckedChange'>)}
                 >
                     <motion.div
                         className={thumbClasses}
@@ -119,7 +119,7 @@ export const Switch: React.FC<SwitchProps> = ({
                         className={labelClasses}
                     >
                         {label}
-                        {required && <span className="text-danger-500 ml-xs">*</span>}
+                        {required && <span className="text-danger ml-xs">*</span>}
                     </label>
                 )}
             </div>

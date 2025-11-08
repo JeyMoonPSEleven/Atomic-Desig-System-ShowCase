@@ -192,6 +192,7 @@
     --color-border-secondary: var(--color-neutral-200);
     --color-border-light: var(--color-neutral-100);
     --color-border-focus: var(--color-primary-500);
+    --color-border-input: var(--color-neutral-400);
     --color-border-error: var(--color-danger-500);
     --color-border-success: var(--color-success-500);
     --color-border-warning: var(--color-warning-500);
@@ -337,6 +338,8 @@
     --shadow-danger: 0 10px 15px -3px var(--shadow-color-danger), 0 4px 6px -4px var(--shadow-color-danger);
 
     --shadow-focus: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    --shadow-focus-danger: 0 0 0 3px rgba(244, 67, 54, 0.1);
+    --shadow-focus-success: 0 0 0 3px rgba(76, 175, 80, 0.1);
 
     /* === ANIMACIONES & TRANSICIONES AVANZADAS === */
     --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);

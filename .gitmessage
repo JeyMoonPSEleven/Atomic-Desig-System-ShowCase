@@ -1,0 +1,11 @@
+feat: Initial commit - Atomic Design System
+
+- Complete component library structure (Atoms, Molecules, Organisms, Templates)
+- React + TypeScript + Vite setup
+- Tailwind CSS v4 with custom tokens
+- Framer Motion animations
+- Full showcase application
+- Theme context with dark mode support
+- All components with TypeScript types
+- CVA for variant management
+

@@ -22,11 +22,11 @@ const checkboxVariants = cva(
                 false: '',
             },
             disabled: {
-                true: 'bg-background-secondary border-gray-300 cursor-not-allowed opacity-65',
+                true: 'bg-background-secondary border-border-secondary cursor-not-allowed opacity-65',
                 false: '',
             },
             error: {
-                true: 'border-danger-500 focus:shadow-[0_0_0_0.2rem_rgba(244,67,54,0.25)]',
+                true: 'border-danger focus:shadow-focus-danger',
                 false: '',
             },
         },
@@ -34,7 +34,7 @@ const checkboxVariants = cva(
             {
                 checked: true,
                 disabled: true,
-                className: 'bg-text-muted border-text-muted',
+                className: 'bg-foreground-muted border-foreground-muted',
             },
         ],
         defaultVariants: {
@@ -75,13 +75,13 @@ export const Checkbox = React.memo<CheckboxProps>(({
     );
 
     const labelClasses = cn(
-        'text-sm font-normal text-text-primary cursor-pointer ml-sm',
-        disabled && 'cursor-not-allowed text-text-muted'
+        'text-sm font-normal text-foreground cursor-pointer ml-sm',
+        disabled && 'cursor-not-allowed text-foreground-muted'
     );
 
     const helperTextClasses = cn(
-        'text-sm text-text-muted ml-sm',
-        error && 'text-danger-600'
+        'text-sm text-foreground-muted ml-sm',
+        error && 'text-danger'
     );
 
     return (
@@ -98,13 +98,13 @@ export const Checkbox = React.memo<CheckboxProps>(({
                     {...props}
                 />
                 {checked && (
-                    <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1.5 h-2.5 border-solid border-text-on-primary border-r-2 border-b-2 rotate-45 pointer-events-none" />
+                    <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1.5 h-2.5 border-solid border-primary-foreground border-r-2 border-b-2 rotate-45 pointer-events-none" />
                 )}
             </div>
             {label && (
                 <label htmlFor={checkboxId} className={labelClasses}>
                     {label}
-                    {required && <span className="text-danger-500 ml-xs">*</span>}
+                    {required && <span className="text-danger ml-xs">*</span>}
                 </label>
             )}
             {helperText && (

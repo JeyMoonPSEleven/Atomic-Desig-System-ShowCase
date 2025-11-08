@@ -14,14 +14,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-primary text-text-on-primary hover:not-disabled:bg-primary-600 active:not-disabled:bg-primary-700',
-        secondary: 'bg-secondary text-text-on-secondary hover:not-disabled:bg-secondary-600 active:not-disabled:bg-secondary-700',
-        success: 'bg-success text-text-on-success hover:not-disabled:bg-success-600 active:not-disabled:bg-success-700',
-        danger: 'bg-danger text-text-on-danger hover:not-disabled:bg-danger-600 active:not-disabled:bg-danger-700',
-        warning: 'bg-warning text-text-on-warning hover:not-disabled:bg-warning-600 active:not-disabled:bg-warning-700',
-        info: 'bg-info text-text-on-info hover:not-disabled:bg-info-600 active:not-disabled:bg-info-700',
-        light: 'bg-gray-100 text-text-primary border-border-primary hover:not-disabled:bg-gray-200',
-        dark: 'bg-gray-800 text-text-on-primary hover:not-disabled:bg-gray-700',
+        primary: 'bg-primary text-primary-foreground hover:not-disabled:bg-primary-600 active:not-disabled:bg-primary-700',
+        secondary: 'bg-secondary text-secondary-foreground hover:not-disabled:bg-secondary-600 active:not-disabled:bg-secondary-700',
+        success: 'bg-success text-success-foreground hover:not-disabled:bg-success-600 active:not-disabled:bg-success-700',
+        danger: 'bg-danger text-danger-foreground hover:not-disabled:bg-danger-600 active:not-disabled:bg-danger-700',
+        warning: 'bg-warning text-warning-foreground hover:not-disabled:bg-warning-600 active:not-disabled:bg-warning-700',
+        info: 'bg-info text-info-foreground hover:not-disabled:bg-info-600 active:not-disabled:bg-info-700',
+        light: 'bg-background-secondary text-foreground border-border-primary hover:not-disabled:bg-background-tertiary',
+        dark: 'bg-gray-800 text-primary-foreground hover:not-disabled:bg-gray-700',
         link: 'bg-transparent text-primary border-transparent font-normal p-0 min-w-auto min-h-auto hover:not-disabled:text-primary-600 hover:not-disabled:underline hover:not-disabled:transform-none hover:not-disabled:shadow-none',
       },
       size: {
