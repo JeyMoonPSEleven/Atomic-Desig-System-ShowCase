@@ -51,24 +51,24 @@ export const ColorSwatch: React.FC<ColorSwatchProps> = ({
         >
             <div
                 className={cn(
-                    'rounded-md border-2 border-gray-300 transition-all duration-fast relative overflow-hidden',
+                    'rounded-md border-2 border-border transition-all duration-fast relative overflow-hidden',
                     sizeClasses[size],
                     selected
-                        ? 'border-primary-500 shadow-[0_0_0_3px_rgba(33,150,243,0.1)]'
-                        : 'hover:border-gray-400 hover:shadow-md'
+                        ? 'border-primary shadow-focus'
+                        : 'hover:border-border-secondary hover:shadow-md'
                 )}
                 style={{ backgroundColor: color }}
             >
                 {selected && (
                     <Icon
                         name="Check"
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-sm font-bold drop-shadow-sm"
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary-foreground text-sm font-bold drop-shadow-sm"
                     />
                 )}
             </div>
 
             {showName && name && (
-                <div className={cn('text-gray-600 text-center font-medium', textSizeClasses[size])}>
+                <div className={cn('text-foreground-secondary text-center font-medium', textSizeClasses[size])}>
                     {name}
                 </div>
             )}

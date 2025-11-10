@@ -104,7 +104,7 @@ export const FAQ = React.memo<FAQProps>(({
           <Text variant="small" color="accent" className="uppercase tracking-wider font-semibold mb-sm">
             {subtitle}
           </Text>
-          <Heading level={2} variant="heading" className="text-text-primary">
+          <Heading level={2} variant="heading" className="text-foreground">
             {title}
           </Heading>
         </motion.div>
@@ -123,7 +123,7 @@ export const FAQ = React.memo<FAQProps>(({
                 <Heading
                   level={3}
                   variant="subheading"
-                  className="text-text-primary border-b border-border pb-sm"
+                  className="text-foreground border-b border-border pb-sm"
                 >
                   {category}
                 </Heading>

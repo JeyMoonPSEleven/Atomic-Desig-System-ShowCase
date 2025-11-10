@@ -2,6 +2,7 @@
 import React from 'react'
 import { useTheme } from '../../../contexts/ThemeContext'
 import { cn } from '../../../utils/cn'
+import { Icon } from '../Icon'
 
 export interface ThemeToggleProps {
   className?: string
@@ -12,49 +13,41 @@ export const ThemeToggle = React.memo<ThemeToggleProps>(({
   className,
   showLabel = false
 }) => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
-  const cycleTheme = () => {
-    if (theme === 'light') {
+  const toggleTheme = () => {
+    // Solo alternar entre light y dark, sin system
+    if (resolvedTheme === 'light') {
       setTheme('dark')
-    } else if (theme === 'dark') {
-      setTheme('system')
     } else {
       setTheme('light')
     }
   }
 
-  const getIcon = () => {
-    if (theme === 'light') return '☀️'
-    if (theme === 'dark') return '🌙'
-    return '💻'
-  }
-
-  const getLabel = () => {
-    if (theme === 'light') return 'Light'
-    if (theme === 'dark') return 'Dark'
-    return 'System'
-  }
-
   return (
     <button
-      onClick={cycleTheme}
+      onClick={toggleTheme}
       className={cn(
-        'flex items-center gap-sm rounded-md px-md py-sm',
-        'bg-background-secondary hover:bg-background-tertiary',
-        'text-text-primary transition-colors',
-        'focus:outline-none focus:ring-2 focus:ring-primary',
+        'flex items-center justify-center gap-1.5 rounded-lg p-2',
+        'bg-background-secondary/50 hover:bg-background-secondary',
+        'text-foreground-secondary hover:text-foreground',
+        'border border-border/50 hover:border-primary/50',
+        'transition-all duration-200',
+        'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+        'w-9 h-9',
         className
       )}
-      aria-label={`Current theme: ${theme}. Click to change`}
-      title={`Theme: ${theme} (click to cycle)`}
+      aria-label={`Switch to ${resolvedTheme === 'light' ? 'dark' : 'light'} theme`}
+      title={`Current: ${resolvedTheme} (click to switch)`}
     >
-      <span className="text-lg" role="img" aria-label={`${theme} theme icon`}>
-        {getIcon()}
-      </span>
+      {resolvedTheme === 'light' ? (
+        <Icon name="MoonStar" size="small" />
+      ) : (
+        <Icon name="SunMedium" size="small" />
+      )}
       {showLabel && (
-        <span className="text-sm font-medium">
-          {getLabel()}
+        <span className="text-xs font-medium">
+          {resolvedTheme === 'light' ? 'Dark' : 'Light'}
         </span>
       )}
     </button>

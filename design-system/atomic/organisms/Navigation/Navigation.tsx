@@ -70,14 +70,14 @@ export const Navigation = React.memo<NavigationProps>(({
               {phone && (
                 <Link
                   href={`tel:${phone}`}
-                  className="flex items-center gap-xs text-text-secondary hover:text-primary transition-colors"
+                  className="flex items-center gap-xs text-foreground-secondary hover:text-primary transition-colors"
                 >
                   <Icon name="Phone" size="small" />
                   <span>{phone}</span>
                 </Link>
               )}
               {address && (
-                <div className="flex items-center gap-xs text-text-secondary">
+                <div className="flex items-center gap-xs text-foreground-secondary">
                   <Icon name="MapPin" size="small" />
                   <span>{address}</span>
                 </div>
@@ -104,7 +104,7 @@ export const Navigation = React.memo<NavigationProps>(({
                     <button
                       className={cn(
                         'flex items-center gap-xs px-md py-sm rounded-md',
-                        'text-text-primary hover:text-primary hover:bg-background-secondary',
+                        'text-foreground hover:text-primary hover:bg-background-secondary',
                         'transition-colors focus:outline-none focus:ring-2 focus:ring-primary'
                       )}
                       onClick={() => handleDropdownToggle(item.label)}
@@ -140,7 +140,7 @@ export const Navigation = React.memo<NavigationProps>(({
                               isExternal={child.isExternal}
                               className={cn(
                                 'block px-md py-sm',
-                                'text-text-primary hover:text-primary hover:bg-background-secondary',
+                                'text-foreground hover:text-primary hover:bg-background-secondary',
                                 'transition-colors'
                               )}
                             >
@@ -157,7 +157,7 @@ export const Navigation = React.memo<NavigationProps>(({
                     isExternal={item.isExternal}
                     className={cn(
                       'flex items-center px-md py-sm rounded-md',
-                      'text-text-primary hover:text-primary hover:bg-background-secondary',
+                      'text-foreground hover:text-primary hover:bg-background-secondary',
                       'transition-colors'
                     )}
                   >
@@ -210,7 +210,7 @@ export const Navigation = React.memo<NavigationProps>(({
                   <div key={item.label}>
                     {item.children ? (
                       <>
-                        <div className="text-text-muted text-sm font-semibold uppercase tracking-wide px-md py-sm">
+                        <div className="text-foreground-muted text-sm font-semibold uppercase tracking-wide px-md py-sm">
                           {item.label}
                         </div>
                         <div className="flex flex-col gap-xs pl-md">
@@ -221,7 +221,7 @@ export const Navigation = React.memo<NavigationProps>(({
                               isExternal={child.isExternal}
                               className={cn(
                                 'flex items-center px-md py-sm rounded-md',
-                                'text-text-secondary hover:text-primary hover:bg-background-secondary',
+                                'text-foreground-secondary hover:text-primary hover:bg-background-secondary',
                                 'transition-colors'
                               )}
                             >
@@ -236,7 +236,7 @@ export const Navigation = React.memo<NavigationProps>(({
                         isExternal={item.isExternal}
                         className={cn(
                           'flex items-center px-md py-sm rounded-md',
-                          'text-text-primary hover:text-primary hover:bg-background-secondary',
+                          'text-foreground hover:text-primary hover:bg-background-secondary',
                           'transition-colors'
                         )}
                       >

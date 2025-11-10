@@ -28,9 +28,9 @@ export const Select: React.FC<SelectProps> = ({
     );
 
     const labelClasses = cn(
-        'text-sm font-medium text-text-primary mb-xs',
-        disabled && 'text-text-muted',
-        error && 'text-danger-600',
+        'text-sm font-medium text-foreground mb-xs',
+        disabled && 'text-foreground-muted',
+        error && 'text-danger',
 
         // Tamaños de texto
         size === 'small' && 'text-xs',
@@ -40,12 +40,12 @@ export const Select: React.FC<SelectProps> = ({
     const triggerClasses = cn(
         'flex items-center justify-between w-full min-w-[200px]',
         'bg-background border-2 border-border rounded-md',
-        'px-md py-sm text-base text-text-primary cursor-pointer',
+        'px-md py-sm text-base text-foreground cursor-pointer',
         'transition-all hover:not-disabled:border-border-primary',
         'focus:outline-none focus:border-border-focus focus:shadow-focus',
-        'disabled:bg-background-secondary disabled:text-text-muted disabled:cursor-not-allowed',
-        error && 'border-danger-500',
-        error && 'focus:border-danger-500 focus:shadow-[0_0_0_3px_rgba(244,67,54,0.1)]',
+        'disabled:bg-background-secondary disabled:text-foreground-muted disabled:cursor-not-allowed',
+        error && 'border-danger',
+        error && 'focus:border-danger focus:shadow-focus-danger',
 
         // Tamaños
         size === 'small' && 'px-sm py-xs text-sm',
@@ -63,13 +63,13 @@ export const Select: React.FC<SelectProps> = ({
 
     const itemClasses = cn(
         'relative flex w-full cursor-default select-none items-center rounded-sm py-sm pl-md pr-8',
-        'text-sm outline-none focus:bg-background-secondary focus:text-text-primary',
+        'text-sm outline-none focus:bg-background-secondary focus:text-foreground',
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
     );
 
     const helperTextClasses = cn(
-        'text-sm text-text-muted mt-xs',
-        error && 'text-danger-600'
+        'text-sm text-foreground-muted mt-xs',
+        error && 'text-danger'
     );
 
     return (

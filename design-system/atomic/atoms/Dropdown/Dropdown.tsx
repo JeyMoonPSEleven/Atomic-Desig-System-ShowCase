@@ -35,26 +35,26 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 <label
                     htmlFor={dropdownId}
                     className={cn(
-                        'text-sm font-medium text-gray-700 mb-xs',
+                        'text-sm font-medium text-foreground mb-xs',
                         size === 'small' && 'text-xs',
                         size === 'large' && 'text-base',
-                        disabled && 'text-gray-400',
-                        error && 'text-danger-600'
+                        disabled && 'text-foreground-muted',
+                        error && 'text-danger'
                     )}
                 >
                     {label}
-                    {required && <span className="text-danger-500 ml-xs">*</span>}
+                    {required && <span className="text-danger ml-xs">*</span>}
                 </label>
             )}
 
             <SelectPrimitive.Root value={value} onValueChange={onChange} disabled={disabled}>
                 <SelectPrimitive.Trigger
                     className={cn(
-                        'flex items-center justify-between w-full bg-white border border-gray-300 rounded-md text-gray-700 cursor-pointer transition-all duration-fast',
-                        'hover:not-disabled:border-gray-400',
-                        'focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100',
-                        'disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed',
-                        error && 'border-danger-500 focus:border-danger-500 focus:ring-danger-100',
+                        'flex items-center justify-between w-full bg-background border border-border rounded-md text-foreground cursor-pointer transition-all duration-fast',
+                        'hover:not-disabled:border-border-secondary',
+                        'focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-primary-50',
+                        'disabled:bg-background-secondary disabled:text-foreground-muted disabled:cursor-not-allowed',
+                        error && 'border-danger focus:border-danger focus:ring-danger-50',
                         sizeClasses[size]
                     )}
                 >
@@ -62,12 +62,12 @@ export const Dropdown: React.FC<DropdownProps> = ({
                         {selectedOption?.label}
                     </SelectPrimitive.Value>
                     <SelectPrimitive.Icon asChild>
-                        <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+                        <ChevronDownIcon className="h-4 w-4 text-foreground-muted" />
                     </SelectPrimitive.Icon>
                 </SelectPrimitive.Trigger>
 
                 <SelectPrimitive.Portal>
-                    <SelectPrimitive.Content className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg">
+                    <SelectPrimitive.Content className="relative z-dropdown min-w-[8rem] overflow-hidden rounded-md border border-border bg-background shadow-lg">
                         <SelectPrimitive.Viewport className="p-1">
                             {options.map((option) => (
                                 <SelectPrimitive.Item
@@ -76,7 +76,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                                     disabled={option.disabled}
                                     className={cn(
                                         'relative flex cursor-default select-none items-center gap-sm rounded-sm py-sm pl-md pr-md text-sm outline-none',
-                                        'focus:bg-gray-100 focus:text-gray-900',
+                                        'focus:bg-background-secondary focus:text-foreground',
                                         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
                                         'data-[state=checked]:bg-primary-50 data-[state=checked]:text-primary-700',
                                         size === 'small' && 'py-xs pl-sm pr-sm text-xs',
@@ -101,7 +101,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
             </SelectPrimitive.Root>
 
             {helperText && (
-                <div className={cn('text-sm text-gray-500 mt-xs', error && 'text-danger-600')}>
+                <div className={cn('text-sm text-foreground-muted mt-xs', error && 'text-danger')}>
                     {helperText}
                 </div>
             )}

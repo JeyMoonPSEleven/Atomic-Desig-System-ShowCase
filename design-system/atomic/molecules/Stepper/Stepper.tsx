@@ -59,10 +59,10 @@ const stepIndicatorVariants = cva(
         dots: 'w-3 h-3',
       },
       state: {
-        active: 'border-primary bg-primary text-text-on-primary',
-        completed: 'border-success bg-success text-text-on-success',
-        pending: 'border-border bg-background-secondary text-text-muted',
-        disabled: 'border-border bg-background-secondary text-text-muted',
+        active: 'border-primary bg-primary text-primary-foreground',
+        completed: 'border-success bg-success text-success-foreground',
+        pending: 'border-border bg-background-secondary text-foreground-muted',
+        disabled: 'border-border bg-background-secondary text-foreground-muted',
       },
     },
     defaultVariants: {
@@ -148,12 +148,12 @@ export const Stepper = React.memo<StepperProps>(({
                       'text-sm font-medium',
                       state === 'active' && 'text-primary',
                       state === 'completed' && 'text-success',
-                      state === 'pending' && 'text-text-muted'
+                      state === 'pending' && 'text-foreground-muted'
                     )}>
                       {step.label}
                     </span>
                     {step.description && (
-                      <span className="text-xs text-text-secondary mt-xs">
+                      <span className="text-xs text-foreground-secondary mt-xs">
                         {step.description}
                       </span>
                     )}
@@ -167,12 +167,12 @@ export const Stepper = React.memo<StepperProps>(({
                       'text-sm font-medium block',
                       state === 'active' && 'text-primary',
                       state === 'completed' && 'text-success',
-                      state === 'pending' && 'text-text-muted'
+                      state === 'pending' && 'text-foreground-muted'
                     )}>
                       {step.label}
                     </span>
                     {step.description && (
-                      <span className="text-xs text-text-secondary mt-xs block">
+                      <span className="text-xs text-foreground-secondary mt-xs block">
                         {step.description}
                       </span>
                     )}

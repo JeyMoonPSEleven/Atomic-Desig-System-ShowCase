@@ -158,7 +158,7 @@ const ErrorTemplate: React.FC<ErrorTemplateProps> = ({
                 </div>
 
                 {/* Error Title */}
-                <Heading level={1} variant="heading" className="text-text-primary mb-md">
+                <Heading level={1} variant="heading" className="text-foreground mb-md">
                     {errorContent.title}
                 </Heading>
 

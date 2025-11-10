@@ -19,7 +19,7 @@ const SettingsTemplate: React.FC<SettingsTemplateProps> = ({
             {showHeader && (
                 <header className="bg-background border-b border-border py-lg px-md">
                     <div className="container mx-auto">
-                        <Heading level={1} className="text-text-primary mb-sm">{headerTitle}</Heading>
+                        <Heading level={1} className="text-foreground mb-sm">{headerTitle}</Heading>
                         <Text variant="body" color="secondary">{headerSubtitle}</Text>
                     </div>
                 </header>

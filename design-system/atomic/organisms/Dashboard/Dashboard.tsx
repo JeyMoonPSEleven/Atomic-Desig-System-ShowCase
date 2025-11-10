@@ -27,10 +27,11 @@ const widgetVariants = cva(
   {
     variants: {
       size: {
-        small: 'col-span-1',
-        medium: 'col-span-1 md:col-span-2',
-        large: 'col-span-1 md:col-span-2 lg:col-span-3',
-        full: 'col-span-1 md:col-span-2 lg:col-span-3',
+        // Sistema de grid: 4 cols (mobile), 8 cols (tablet), 12 cols (desktop)
+        small: 'col-span-4 md:col-span-4 lg:col-span-4', // 1 columna en todos los breakpoints
+        medium: 'col-span-4 md:col-span-4 lg:col-span-4', // 1/3 en desktop, full en mobile/tablet
+        large: 'col-span-4 md:col-span-8 lg:col-span-8', // 2/3 en desktop, full en mobile, half en tablet
+        full: 'col-span-4 md:col-span-8 lg:col-span-12', // Full width en todos los breakpoints
       },
     },
     defaultVariants: {
@@ -70,7 +71,7 @@ export const Dashboard = React.memo<DashboardProps>(({
           <div className="container mx-auto px-md py-md">
             <div className="flex items-center justify-between">
               <div>
-                <Heading level={1} variant="heading" className="text-text-primary mb-xs">
+                <Heading level={1} variant="heading" className="text-foreground mb-xs">
                   {title}
                 </Heading>
                 <Text variant="body" color="secondary">
@@ -92,7 +93,7 @@ export const Dashboard = React.memo<DashboardProps>(({
         {showSidebar && (
           <aside className="w-64 bg-background-secondary border-r border-border min-h-screen">
             <div className="p-md">
-              <div className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-md">
+              <div className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-md">
                 Navegación
               </div>
               <ul className="flex flex-col gap-xs">
@@ -103,8 +104,8 @@ export const Dashboard = React.memo<DashboardProps>(({
                       className={cn(
                         'flex items-center gap-sm px-md py-sm rounded-md transition-colors',
                         item.id === 'overview'
-                          ? 'bg-primary text-text-on-primary'
-                          : 'text-text-secondary hover:bg-background hover:text-text-primary'
+                          ? 'bg-primary text-primary-foreground'
+                          : 'text-foreground-secondary hover:bg-background hover:text-foreground'
                       )}
                     >
                       {item.icon && <span>{item.icon}</span>}
@@ -120,7 +121,7 @@ export const Dashboard = React.memo<DashboardProps>(({
         {/* Main Content */}
         <main className="flex-1 p-lg">
           {widgets.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <div className="grid grid-cols-mobile md:grid-cols-tablet lg:grid-cols-desktop gap-grid-lg">
               {widgets.map((widget, index) => (
                 <motion.div
                   key={widget.id}
@@ -132,7 +133,7 @@ export const Dashboard = React.memo<DashboardProps>(({
                   whileHover={{ y: -4 }}
                 >
                   <div className="mb-md">
-                    <Heading level={3} variant="subheading" className="text-text-primary">
+                    <Heading level={3} variant="subheading" className="text-foreground">
                       {widget.title}
                     </Heading>
                   </div>
@@ -142,10 +143,10 @@ export const Dashboard = React.memo<DashboardProps>(({
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center h-64 text-center">
-              <div className="w-16 h-16 mb-md text-text-muted">
+              <div className="w-16 h-16 mb-md text-foreground-muted">
                 <Icon name="LayoutDashboard" size="large" />
               </div>
-              <Text variant="large" className="text-text-primary mb-sm font-semibold">
+              <Text variant="large" className="text-foreground mb-sm font-semibold">
                 No hay widgets disponibles
               </Text>
               <Text variant="body" color="secondary">

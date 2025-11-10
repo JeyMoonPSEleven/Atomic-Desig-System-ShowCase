@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["node"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -34,7 +35,7 @@
       "@/types": ["./design-system/types"]
     }
   },
-  "include": ["design-system", "src"],
+  "include": ["design-system", "src", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
 

@@ -136,7 +136,7 @@ export const Hero = React.memo<HeroProps>(({
               <Heading
                 level={1}
                 variant="display"
-                className="text-text-primary text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
+                className="text-foreground text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
               >
                 {title}
               </Heading>
@@ -192,7 +192,7 @@ export const Hero = React.memo<HeroProps>(({
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-xs">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-text-secondary">{stat.label}</div>
+                  <div className="text-sm text-foreground-secondary">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>

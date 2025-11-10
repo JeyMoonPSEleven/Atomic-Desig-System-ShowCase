@@ -11,8 +11,8 @@
     --breakpoint-xxl: 1400px;
 
     /* === COLORES BASE PARA PALETAS COMPLETAS === */
-    --color-primary-base: #2196f3;
-    --color-secondary-base: #2196f3;
+    --color-primary-base: #137FEC;
+    --color-secondary-base: #D63384;
     --color-success-base: #4caf50;
     --color-warning-base: #ff9800;
     --color-danger-base: #f44336;
@@ -20,30 +20,30 @@
     --color-neutral-base: #6c757d;
 
     /* === PALETA PRIMARIA COMPLETA === */
-    --color-primary-50: #e3f2fd;
-    --color-primary-100: #bbdefb;
-    --color-primary-200: #90caf9;
-    --color-primary-300: #64b5f6;
-    --color-primary-400: #42a5f5;
-    --color-primary-500: #2196f3;
-    --color-primary-600: #1e88e5;
-    --color-primary-700: #1976d2;
-    --color-primary-800: #1565c0;
-    --color-primary-900: #0d47a1;
-    --color-primary-950: #0a3d91;
+    --color-primary-50: #e6f2fd;
+    --color-primary-100: #cce5fb;
+    --color-primary-200: #99cbf7;
+    --color-primary-300: #66b1f3;
+    --color-primary-400: #3397ef;
+    --color-primary-500: #137FEC;
+    --color-primary-600: #0f66bd;
+    --color-primary-700: #0b4c8e;
+    --color-primary-800: #08335f;
+    --color-primary-900: #04192f;
+    --color-primary-950: #020d18;
 
-    /* === PALETA SECUNDARIA COMPLETA === */
-    --color-secondary-50: #e3f2fd;
-    --color-secondary-100: #bbdefb;
-    --color-secondary-200: #90caf9;
-    --color-secondary-300: #64b5f6;
-    --color-secondary-400: #42a5f5;
-    --color-secondary-500: #2196f3;
-    --color-secondary-600: #1e88e5;
-    --color-secondary-700: #1976d2;
-    --color-secondary-800: #1565c0;
-    --color-secondary-900: #0d47a1;
-    --color-secondary-950: #0a3d91;
+    /* === PALETA SECUNDARIA COMPLETA (Rosa/Magenta) === */
+    --color-secondary-50: #fce7f3;
+    --color-secondary-100: #f9cfe7;
+    --color-secondary-200: #f39fcf;
+    --color-secondary-300: #ed6fb7;
+    --color-secondary-400: #e73f9f;
+    --color-secondary-500: #D63384;
+    --color-secondary-600: #ab296a;
+    --color-secondary-700: #801f50;
+    --color-secondary-800: #551436;
+    --color-secondary-900: #2a0a1b;
+    --color-secondary-950: #15050e;
 
     /* === PALETA SUCCESS COMPLETA === */
     --color-success-50: #e8f5e8;
@@ -130,9 +130,9 @@
     --color-primary-alpha-40: rgba(33, 150, 243, 0.4);
     --color-primary-alpha-50: rgba(33, 150, 243, 0.5);
 
-    --color-secondary-alpha-10: rgba(33, 150, 243, 0.1);
-    --color-secondary-alpha-20: rgba(33, 150, 243, 0.2);
-    --color-secondary-alpha-30: rgba(33, 150, 243, 0.3);
+    --color-secondary-alpha-10: rgba(214, 51, 132, 0.1);
+    --color-secondary-alpha-20: rgba(214, 51, 132, 0.2);
+    --color-secondary-alpha-30: rgba(214, 51, 132, 0.3);
 
     /* === COLORES COMPLEMENTARIOS AUTOMÁTICOS === */
     --color-primary-complement: #ff6b35;
@@ -150,6 +150,7 @@
     --gradient-primary: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
     --gradient-primary-radial: radial-gradient(circle at top right, var(--color-primary-400), var(--color-primary-700));
     --gradient-secondary: linear-gradient(135deg, var(--color-secondary-500), var(--color-secondary-700));
+    --gradient-primary-to-secondary: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
     --gradient-success: linear-gradient(135deg, var(--color-success-500), var(--color-success-700));
     --gradient-warning: linear-gradient(135deg, var(--color-warning-500), var(--color-warning-700));
     --gradient-danger: linear-gradient(135deg, var(--color-danger-500), var(--color-danger-700));
@@ -440,13 +441,38 @@
     --range-exit: exit 0% exit 100%;
     --range-cover: cover 0% cover 100%;
 
-    /* === GRID SYSTEM AVANZADO === */
+    /* === GRID SYSTEM AVANZADO (Muller-Brockmann) === */
+    /* Columnas del grid system */
     --grid-columns-mobile: 4;
     --grid-columns-tablet: 8;
     --grid-columns-desktop: 12;
     --grid-columns-wide: 16;
+    
+    /* Gap del grid (espacio entre columnas) - basado en tokens de spacing */
+    --grid-gap-base: var(--spacing-md);
+    --grid-gap-sm: var(--spacing-sm);
+    --grid-gap-md: var(--spacing-md);
+    --grid-gap-lg: var(--spacing-lg);
+    --grid-gap-xl: var(--spacing-xl);
     --grid-gap-fluid: clamp(1rem, 2vw, 2rem);
+    
+    /* Márgenes del grid */
     --grid-margin-fluid: clamp(1rem, 3vw, 3rem);
+    
+    /* Container: max-width y padding por breakpoint */
+    --container-max-width-mobile: 100%;
+    --container-max-width-tablet: 45rem; /* 720px */
+    --container-max-width-desktop: 75rem; /* 1200px */
+    --container-max-width-wide: 87.5rem; /* 1400px */
+    
+    /* Container padding horizontal por breakpoint */
+    --container-padding-x-mobile: var(--spacing-md);
+    --container-padding-x-tablet: var(--spacing-lg);
+    --container-padding-x-desktop: var(--spacing-xl);
+    --container-padding-x-wide: var(--spacing-xl);
+    
+    /* Container padding vertical */
+    --container-padding-y: 0;
 
     /* === ASPECT RATIOS === */
     --aspect-square: 1 / 1;

@@ -48,7 +48,7 @@
     "shadcn-ui": "^0.9.5",
     "tailwindcss": "^4.0.0-alpha.4",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8",
+    "vite": "^7.2.2",
     "vitest": "^1.0.4"
   },
   "engines": {

@@ -33,11 +33,11 @@ export const Spinner: React.FC<SpinnerProps> = ({
         variant === 'warning' && 'border-t-warning',
         variant === 'info' && 'border-t-info',
         variant === 'light' && 'border-t-border-light',
-        variant === 'dark' && 'border-t-text-primary'
+        variant === 'dark' && 'border-t-foreground'
     );
 
     const textClasses = cn(
-        'text-sm text-text-secondary font-medium'
+        'text-sm text-foreground-secondary font-medium'
     );
 
     return (

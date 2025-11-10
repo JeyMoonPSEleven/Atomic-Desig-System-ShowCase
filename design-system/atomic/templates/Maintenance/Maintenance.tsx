@@ -48,7 +48,7 @@ export const MaintenanceTemplate = React.memo<MaintenanceTemplateProps>(({
           <Icon name="AlertTriangle" size="large" />
         </div>
 
-        <Heading level={1} className="text-text-primary mb-md">
+        <Heading level={1} className="text-foreground mb-md">
           {title}
         </Heading>
         <Text variant="large" color="secondary" className="mb-xl">
@@ -56,7 +56,7 @@ export const MaintenanceTemplate = React.memo<MaintenanceTemplateProps>(({
         </Text>
 
         <div className="p-lg bg-background-secondary rounded-lg border border-border mb-lg">
-          <Text variant="small" className="font-semibold text-text-primary mb-sm">
+          <Text variant="small" className="font-semibold text-foreground mb-sm">
             Tiempo estimado de mantenimiento:
           </Text>
           <Text variant="large" className="text-primary font-bold">

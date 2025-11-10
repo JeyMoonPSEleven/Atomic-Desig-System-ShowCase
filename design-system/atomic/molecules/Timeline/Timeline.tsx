@@ -53,11 +53,11 @@ const timelineIconVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary border-primary text-text-on-primary',
-        success: 'bg-success border-success text-text-on-success',
-        warning: 'bg-warning border-warning text-text-on-warning',
-        danger: 'bg-danger border-danger text-text-on-danger',
-        info: 'bg-info border-info text-text-on-info',
+        default: 'bg-primary border-primary text-primary-foreground',
+        success: 'bg-success border-success text-success-foreground',
+        warning: 'bg-warning border-warning text-warning-foreground',
+        danger: 'bg-danger border-danger text-danger-foreground',
+        info: 'bg-info border-info text-info-foreground',
       },
       size: {
         default: 'w-10 h-10',

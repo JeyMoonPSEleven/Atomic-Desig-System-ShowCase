@@ -200,6 +200,42 @@ const config: Config = {
         '4xl': 'var(--spacing-4xl)',
         '5xl': 'var(--spacing-5xl)',
       },
+      // === GRID SYSTEM (Muller-Brockmann) ===
+      gridTemplateColumns: {
+        // Columnas responsivas del grid system
+        mobile: 'repeat(4, minmax(0, 1fr))',
+        tablet: 'repeat(8, minmax(0, 1fr))',
+        desktop: 'repeat(12, minmax(0, 1fr))',
+        wide: 'repeat(16, minmax(0, 1fr))',
+      },
+      gap: {
+        // Gap del grid basado en tokens de spacing
+        'grid-base': 'var(--grid-gap-base)',
+        'grid-sm': 'var(--grid-gap-sm)',
+        'grid-md': 'var(--grid-gap-md)',
+        'grid-lg': 'var(--grid-gap-lg)',
+        'grid-xl': 'var(--grid-gap-xl)',
+        'grid-fluid': 'var(--grid-gap-fluid)',
+      },
+      // === CONTAINER CONFIGURATION ===
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: 'var(--container-padding-x-mobile)',
+          sm: 'var(--container-padding-x-mobile)',
+          md: 'var(--container-padding-x-tablet)',
+          lg: 'var(--container-padding-x-desktop)',
+          xl: 'var(--container-padding-x-desktop)',
+          '2xl': 'var(--container-padding-x-wide)',
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1536px',
+        },
+      },
       // === TIPOGRAFÍA SEMÁNTICA ===
       fontFamily: {
         sans: ['var(--font-family-base)', 'system-ui', 'sans-serif'],

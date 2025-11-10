@@ -85,13 +85,13 @@ export const Image: React.FC<ImageProps> = ({
         >
             {imageState === 'loading' && (
                 <div className="absolute inset-0 flex items-center justify-center bg-background-secondary">
-                    <span className="text-text-muted">Cargando...</span>
+                    <span className="text-foreground-muted">Cargando...</span>
                 </div>
             )}
 
             {imageState === 'error' && (
                 <div className="absolute inset-0 flex items-center justify-center bg-background-secondary">
-                    <span className="text-danger-600">Error al cargar imagen</span>
+                    <span className="text-danger">Error al cargar imagen</span>
                 </div>
             )}
 

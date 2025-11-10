@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atomic Design System Showcase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4A6D8C",
+              "secondary": "#F2B8A2",
+              "accent": "#E4D5B9",
+              "background-light": "#F9FAFB",
+              "background-dark": "#101922",
+              "text-headings": "#2D3748",
+              "text-body": "#4A5568",
+              "system-success": "#34D399",
+              "system-error": "#F87171",
+              "system-warning": "#FBBF24",
+              "neutral-100": "#F3F4F6",
+              "neutral-200": "#E5E7EB",
+              "neutral-300": "#D1D5DB",
+              "neutral-400": "#9CA3AF",
+              "neutral-500": "#6B7280",
+              "neutral-600": "#4B5563",
+              "neutral-700": "#374151",
+              "neutral-800": "#1F2937",
+              "neutral-900": "#111827",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .loading-spinner {
+            border: 2px solid #f3f3f3;border-top: 2px solid #4A6D8C;border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-body dark:text-gray-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 sm:px-6 lg:px-8 h-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-headings dark:text-white">
+<div class="text-primary">
+<span class="material-symbols-outlined !text-3xl">hub</span>
+</div>
+<h2 class="text-xl font-bold">Atomic Design System</h2>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#atomos">Átomos</a>
+<a class="text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#moleculas">Moléculas</a>
+<a class="text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#organismos">Organismos</a>
+<a class="text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#plantillas">Plantillas</a>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<div class="flex items-center gap-1 rounded-lg bg-gray-100 dark:bg-gray-800 p-1 text-sm">
+<button class="px-3 py-1 rounded-md text-text-body dark:text-gray-400">V1</button>
+<button class="px-3 py-1 rounded-md bg-white dark:bg-black/20 text-primary font-semibold shadow-sm">V2</button>
+<button class="px-3 py-1 rounded-md text-text-body dark:text-gray-400">V3</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHZie3cRV67uwPsmUmmBHM7ppRKu83mviWhbWkRkrvv_aVfsc8SuHJAmqx0Ae9GMgSRgXOc7wS76i0QiHXAy-FRqr3ohyrSP6PapK55TDy14kgjGGifPaeuwJnPkKTTSbnQQ_2PZZXOeugtcEXcVDiUkOD3CzzUznH7mTZiKSoRu9C-QnIUmBI_hKdmzROMJxawRG2NLAzAFl2B7jiFIJ8mdP6yHfAXFng0GxtBks-T2-RnmBWxADV6rzfxJlbTrXcfH8ozQtWWNpw");'></div>
+</div>
+</header>
+<div class="flex flex-1">
+<aside class="sticky top-20 h-[calc(100vh-5rem)] w-64 flex-shrink-0 border-r border-gray-200 dark:border-gray-800 p-6 hidden lg:block overflow-y-auto">
+<div class="flex flex-col gap-6">
+<nav class="flex flex-col gap-2">
+<h3 class="px-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 tracking-wider">Átomos</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium text-text-body dark:text-gray-300" href="#interactivos"><span class="material-symbols-outlined !text-xl">touch_app</span> Interactivos</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium text-text-body dark:text-gray-300" href="#visuales"><span class="material-symbols-outlined !text-xl">visibility</span> Visuales</a>
+</nav>
+<nav class="flex flex-col gap-2">
+<h3 class="px-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 tracking-wider">Moléculas</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium text-text-body dark:text-gray-300" href="#componentes"><span class="material-symbols-outlined !text-xl">dashboard</span> Componentes</a>
+</nav>
+<nav class="flex flex-col gap-2">
+<h3 class="px-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 tracking-wider">Organismos</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium text-text-body dark:text-gray-300" href="#secciones-complejas"><span class="material-symbols-outlined !text-xl">view_quilt</span> Secciones</a>
+</nav>
+<nav class="flex flex-col gap-2">
+<h3 class="px-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 tracking-wider">Plantillas</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium text-text-body dark:text-gray-300" href="#templates"><span class="material-symbols-outlined !text-xl">web</span> Layouts</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 p-4 sm:p-6 lg:p-10">
+<div class="max-w-7xl mx-auto">
+<section class="text-center py-16 md:py-24">
+<div class="flex flex-col items-center gap-6">
+<h1 class="text-4xl md:text-6xl font-black text-text-headings dark:text-white tracking-tighter">Atomic Design System</h1>
+<p class="max-w-2xl text-lg md:text-xl text-text-body dark:text-gray-300">A scalable and consistent design language for building exceptional products.</p>
+<button class="flex items-center justify-center gap-2 h-12 px-6 bg-primary text-white text-base font-bold rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-shadow">
+<span class="truncate">Get Started</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<section class="mb-16 scroll-mt-24" id="atomos">
+<h2 class="text-3xl font-bold text-text-headings dark:text-white tracking-tight mb-8">ÁTOMOS (Fundamentos)</h2>
+<div class="flex flex-col gap-12">
+<div class="scroll-mt-24" id="interactivos">
+<h3 class="text-2xl font-semibold text-text-headings dark:text-white mb-6">Interactivos</h3>
+<div class="grid grid-cols-1 @container gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Buttons</h4>
+<div class="grid grid-cols-2 @md:grid-cols-3 @xl:grid-cols-6 gap-4">
+<button class="h-10 px-4 bg-primary text-white text-sm font-bold rounded-lg">Primary</button>
+<button class="h-10 px-4 bg-secondary text-text-headings text-sm font-bold rounded-lg">Secondary</button>
+<button class="h-10 px-4 bg-primary/10 text-primary dark:bg-primary/20 text-sm font-bold rounded-lg">Tertiary</button>
+<button class="h-10 px-4 text-primary text-sm font-bold rounded-lg">Text-only</button>
+<button class="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-700 text-text-body dark:text-gray-300 rounded-lg"><span class="material-symbols-outlined">favorite</span></button>
+<button class="h-10 px-4 border border-gray-300 dark:border-gray-700 text-text-body dark:text-gray-300 text-sm font-bold rounded-lg">Outline</button>
+<button class="h-10 px-4 bg-primary text-white text-sm font-bold rounded-lg opacity-50 cursor-not-allowed">Disabled</button>
+<button class="h-10 px-4 flex items-center justify-center gap-2 bg-primary text-white text-sm font-bold rounded-lg"><div class="loading-spinner"></div>Loading</button>
+</div>
+</div>
+<div class="grid grid-cols-1 @md:grid-cols-2 @xl:grid-cols-3 gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Inputs</h4>
+<div class="space-y-4">
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-transparent dark:text-white" placeholder="Text" type="text"/>
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-transparent dark:text-white" placeholder="Password" type="password"/>
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-transparent dark:text-white" placeholder="Search" type="search"/>
+</div>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Selection</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2"><input class="form-checkbox rounded text-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800" type="checkbox"/>Checkbox</label>
+<label class="flex items-center gap-2"><input class="form-radio text-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800" name="radio-group" type="radio"/>Radio</label>
+</div>
+<select class="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-transparent dark:text-white dark:bg-background-dark">
+<option>Single Select</option><option>Option 2</option>
+</select>
+<select class="form-multiselect w-full rounded-lg border-gray-300 dark:border-gray-700 bg-transparent dark:text-white dark:bg-background-dark" multiple="">
+<option>Multi-select</option><option>Option 2</option><option>Option 3</option>
+</select>
+</div>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Slider &amp; Switch</h4>
+<div class="space-y-6 pt-2">
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" type="range"/>
+<label class="flex items-center justify-between">
+<span>Switch</span>
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer" for="toggle"></label>
+</div>
+<style>.toggle-checkbox:checked { right: 0; border-color: #4A6D8C; } .toggle-checkbox:checked + .toggle-label { background-color: #4A6D8C; }</style>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="scroll-mt-24" id="visuales">
+<h3 class="text-2xl font-semibold text-text-headings dark:text-white mb-6">Visuales</h3>
+<div class="grid grid-cols-1 @container gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 @lg:col-span-3">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Color Swatches</h4>
+<div class="grid grid-cols-2 @md:grid-cols-4 @xl:grid-cols-8 gap-6">
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-primary shadow-inner"></div><p class="font-medium text-sm">Primary</p><span class="text-xs text-gray-500">#4A6D8C</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-secondary shadow-inner"></div><p class="font-medium text-sm">Secondary</p><span class="text-xs text-gray-500">#F2B8A2</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-accent shadow-inner"></div><p class="font-medium text-sm">Accent</p><span class="text-xs text-gray-500">#E4D5B9</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-neutral-500 shadow-inner"></div><p class="font-medium text-sm">Neutral</p><span class="text-xs text-gray-500">#6B7280</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-system-success shadow-inner"></div><p class="font-medium text-sm">Success</p><span class="text-xs text-gray-500">#34D399</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-system-error shadow-inner"></div><p class="font-medium text-sm">Error</p><span class="text-xs text-gray-500">#F87171</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-20 rounded-full bg-system-warning shadow-inner"></div><p class="font-medium text-sm">Warning</p><span class="text-xs text-gray-500">#FBBF24</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 @md:grid-cols-3 gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 @md:col-span-2">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Typography</h4>
+<div class="space-y-4"><h1 class="text-5xl font-black text-text-headings dark:text-white">Heading 1</h1><h2 class="text-4xl font-bold text-text-headings dark:text-white">Heading 2</h2><h3 class="text-2xl font-semibold text-text-headings dark:text-white">Heading 3</h3><h4 class="text-xl font-medium text-text-headings dark:text-white">Heading 4</h4><p class="text-base text-text-body dark:text-gray-300">Paragraph text for the body. The quick brown fox jumps over the lazy dog.</p><a class="text-primary hover:underline" href="#">This is a link</a></div>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Icons</h4>
+<div class="grid grid-cols-4 gap-4 text-center text-text-body dark:text-gray-300"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">home</span><p class="text-xs">Home</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">search</span><p class="text-xs">Search</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">settings</span><p class="text-xs">Settings</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">favorite</span><p class="text-xs">Favorite</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">person</span><p class="text-xs">Person</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">delete</span><p class="text-xs">Delete</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">add_circle</span><p class="text-xs">Add</p></div><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined !text-4xl">share</span><p class="text-xs">Share</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16 scroll-mt-24" id="moleculas">
+<h2 class="text-3xl font-bold text-text-headings dark:text-white tracking-tight mb-8">MOLÉCULAS (Componentes)</h2>
+<div class="scroll-mt-24" id="componentes">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Search Bar</h4>
+<div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span><input class="form-input w-full rounded-lg pl-10 border-gray-300 dark:border-gray-700 bg-transparent dark:text-white" placeholder="Search components..." type="text"/></div>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center">
+<div class="size-24 rounded-full bg-cover bg-center mb-4" data-alt="User avatar of a smiling woman" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtgRPHGvIEtqhQgexEAqRpPinxTzk06FTnwkQ0OfoF4rXWE1PgOb09ADgYJ5dklijfpCh-Ujrv9AgEVNeHFFUoU4f8cVThdIGAFtyyDI6-BwI6BOZNr8N-2HJ34UYKOAO7omlewNYkQBkVJHffgWFU277oB4NquOfsfwAzoZQqfyFX4RWa1bTMqmeFriWHvPwrj5KUd-3aLxJd4tefGEmzbiXE7W71V36fxIZ4B_lnoczlSbq6rsR6_HKl1D4-miXHhxjH9RUsbRgP')"></div><h4 class="font-bold text-lg text-text-headings dark:text-white">Jane Doe</h4><p class="text-sm text-primary font-medium">Product Designer</p><p class="text-sm text-text-body dark:text-gray-400 mt-2">Crafting user-centric experiences.</p>
+</div>
+<div class="lg:col-span-3 p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Alerts &amp; Toasts</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-system-success/10 text-system-success"><span class="material-symbols-outlined mt-0.5">check_circle</span><p class="text-sm font-medium">Success! Your changes have been saved.</p></div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-system-error/10 text-system-error"><span class="material-symbols-outlined mt-0.5">cancel</span><p class="text-sm font-medium">Error! Could not complete the request.</p></div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-blue-500/10 text-blue-500"><span class="material-symbols-outlined mt-0.5">info</span><p class="text-sm font-medium">Info: A new software update is available.</p></div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-system-warning/10 text-system-warning"><span class="material-symbols-outlined mt-0.5">warning</span><p class="text-sm font-medium">Warning: Your session will expire soon.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16 scroll-mt-24" id="organismos">
+<h2 class="text-3xl font-bold text-text-headings dark:text-white tracking-tight mb-8">ORGANISMOS (Secciones Complejas)</h2>
+<div class="scroll-mt-24" id="secciones-complejas">
+<div class="grid grid-cols-1 gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Header</h4>
+<div class="flex items-center justify-between whitespace-nowrap border border-solid border-gray-200 dark:border-gray-700 px-6 py-3 rounded-lg"><div class="flex items-center gap-8"><div class="flex items-center gap-2 text-text-headings dark:text-white"><div class="size-6 text-primary"><span class="material-symbols-outlined !text-2xl">hub</span></div><h2 class="text-lg font-bold">Logo</h2></div><div class="hidden md:flex items-center gap-6"><a class="text-sm font-medium" href="#">Atoms</a><a class="text-sm font-medium" href="#">Molecules</a></div></div><div class="flex flex-1 justify-end items-center gap-4"><label class="flex-col min-w-40 !h-10 max-w-64 hidden sm:flex"><div class="flex w-full flex-1 items-stretch rounded-lg h-full"><div class="text-gray-500 flex bg-gray-100 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg border-r-0"><span class="material-symbols-outlined !text-xl">search</span></div><input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border-none bg-gray-100 dark:bg-gray-800 h-full placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-sm" placeholder="Search" value=""/></div></label><div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9QrwoyCko9vSfrlANAOqgQTs9Ggwp5ck1c7Noy4be1lTZAqlf_YapvcQB-3epQ5B_EWl4wmi2q5NH9NBALESo26c7kt1p1RrFYJlmbYdcn_TUQqtrVuK9yVX1tEwft36-5oQkhqCDzP5OEcct3RMUGcZ7toobsqF1Q3hOBMr8run7_w6kU6myhIr-l_PAGTiksjf0Y-3hbN16eRxBJgvNmoMB_W3OdDdsEYJ2C_AqlBED4wrelPRfSGdvD-lHX5JMePREZe9HsAsO");'></div></div></div>
+</div>
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Data Table</h4>
+<div class="overflow-x-auto"><table class="w-full text-sm text-left text-gray-500 dark:text-gray-400"> <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"> <tr> <th class="px-6 py-3" scope="col">User</th><th class="px-6 py-3" scope="col">Role</th><th class="px-6 py-3" scope="col">Status</th><th class="px-6 py-3" scope="col">Action</th> </tr></thead> <tbody> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">John Doe</th><td class="px-6 py-4">Admin</td><td class="px-6 py-4">Active</td><td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Edit</a></td> </tr><tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Jane Smith</th><td class="px-6 py-4">Developer</td><td class="px-6 py-4">Inactive</td><td class="px-6 py-4"><a class="font-medium text-primary hover:underline" href="#">Edit</a></td> </tr></tbody></table></div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16 scroll-mt-24" id="plantillas">
+<h2 class="text-3xl font-bold text-text-headings dark:text-white tracking-tight mb-8">PLANTILLAS (Templates)</h2>
+<div class="scroll-mt-24" id="templates">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Authentication</h4>
+<div class="w-full max-w-xs mx-auto"><form class="bg-white dark:bg-gray-800/50 shadow-md rounded px-8 pt-6 pb-8 mb-4"> <div class="mb-4"> <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="username"> Username </label> <input class="form-input shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white" id="username" placeholder="Username" type="text"/> </div><div class="mb-6"> <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="password"> Password </label> <input class="form-input shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white" id="password" placeholder="******************" type="password"/> </div><div class="flex items-center justify-between"> <button class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded focus:outline-none" type="button"> Sign In </button> <a class="inline-block align-baseline font-bold text-sm text-primary hover:text-primary/90" href="#"> Forgot Password? </a> </div></form></div>
+</div>
+<div class="md:col-span-2 p-6 bg-white dark:bg-gray-900/50 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+<h4 class="text-lg font-semibold text-text-headings dark:text-white mb-4">Dashboard</h4>
+<div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-1 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<h5 class="font-bold">Sales</h5><p class="text-2xl font-bold text-primary">1,234</p><p class="text-sm text-green-500">+5% this month</p>
+</div>
+<div class="md:col-span-1 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<h5 class="font-bold">Users</h5><p class="text-2xl font-bold text-primary">56</p><p class="text-sm text-green-500">+2 new users</p>
+</div>
+<div class="md:col-span-1 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<h5 class="font-bold">Revenue</h5><p class="text-2xl font-bold text-primary">$12,345</p><p class="text-sm text-red-500">-1.2%</p>
+</div>
+<div class="md:col-span-3 h-40 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg flex items-center justify-center text-gray-500">Chart Area</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</body></html>

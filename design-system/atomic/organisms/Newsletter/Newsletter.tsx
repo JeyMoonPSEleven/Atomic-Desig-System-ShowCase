@@ -119,7 +119,7 @@ export const Newsletter = React.memo<NewsletterProps>(({
           <Text variant="small" color="accent" className="uppercase tracking-wider font-semibold">
             {subtitle}
           </Text>
-          <Heading level={2} variant="heading" className="text-text-primary">
+          <Heading level={2} variant="heading" className="text-foreground">
             {title}
           </Heading>
           <Text variant="body" color="secondary">
@@ -138,7 +138,7 @@ export const Newsletter = React.memo<NewsletterProps>(({
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
                   <Icon name="CheckCircle" size="small" className="text-success flex-shrink-0" />
-                  <Text variant="small" className="text-text-secondary">
+                  <Text variant="small" className="text-foreground-secondary">
                     {benefit}
                   </Text>
                 </motion.li>
@@ -178,7 +178,7 @@ export const Newsletter = React.memo<NewsletterProps>(({
 
             {/* Email Input */}
             <div className="relative">
-              <div className="absolute left-md top-1/2 transform -translate-y-1/2 text-text-muted pointer-events-none">
+              <div className="absolute left-md top-1/2 transform -translate-y-1/2 text-foreground-muted pointer-events-none">
                 <Icon name="Mail" size="small" />
               </div>
               <Input

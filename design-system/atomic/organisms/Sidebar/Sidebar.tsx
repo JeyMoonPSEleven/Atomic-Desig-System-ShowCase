@@ -48,8 +48,8 @@ const navLinkVariants = cva(
   {
     variants: {
       isActive: {
-        true: 'bg-primary text-text-on-primary',
-        false: 'text-text-secondary hover:bg-background-secondary hover:text-text-primary',
+        true: 'bg-primary text-primary-foreground',
+        false: 'text-foreground-secondary hover:bg-background-secondary hover:text-foreground',
       },
       isCollapsed: {
         true: 'justify-center',
@@ -145,7 +145,7 @@ export const Sidebar = React.memo<SidebarProps>(({
                         'flex items-center gap-sm px-md py-xs rounded-md transition-colors',
                         child.isActive
                           ? 'text-primary font-medium'
-                          : 'text-text-secondary hover:text-text-primary hover:bg-background-secondary'
+                          : 'text-foreground-secondary hover:text-foreground hover:bg-background-secondary'
                       )}
                       onClick={() => onItemClick && onItemClick(child)}
                       isExternal={child.isExternal}
@@ -175,12 +175,12 @@ export const Sidebar = React.memo<SidebarProps>(({
         {showLogo && (
           <Link href="/" className="flex items-center gap-sm">
             <Logo text={logoText} size="small" />
-            {!isCollapsed && <span className="font-semibold text-text-primary">{logoText}</span>}
+            {!isCollapsed && <span className="font-semibold text-foreground">{logoText}</span>}
           </Link>
         )}
 
         {showTitle && !isCollapsed && (
-          <div className="text-xs uppercase tracking-wide text-text-muted mt-md">{title}</div>
+          <div className="text-xs uppercase tracking-wide text-foreground-muted mt-md">{title}</div>
         )}
       </div>
 
@@ -192,7 +192,7 @@ export const Sidebar = React.memo<SidebarProps>(({
       {/* Footer */}
       <div className="p-md border-t border-border flex-shrink-0">
         {!isCollapsed && (
-          <div className="text-xs text-text-muted text-center">
+          <div className="text-xs text-foreground-muted text-center">
             © {new Date().getFullYear()} {logoText}
           </div>
         )}
@@ -205,7 +205,7 @@ export const Sidebar = React.memo<SidebarProps>(({
             'absolute -right-3 top-20',
             'w-6 h-6 flex items-center justify-center rounded-full',
             'bg-background border border-border shadow-md',
-            'hover:bg-primary hover:text-text-on-primary hover:border-primary',
+            'hover:bg-primary hover:text-primary-foreground hover:border-primary',
             'transition-colors focus:outline-none focus:ring-2 focus:ring-primary'
           )}
           onClick={handleToggleCollapse}

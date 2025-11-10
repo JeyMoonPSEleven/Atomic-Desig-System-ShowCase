@@ -72,27 +72,27 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                 <label
                     htmlFor={uploadId}
                     className={cn(
-                        'text-sm font-medium text-gray-700 mb-xs',
+                        'text-sm font-medium text-foreground mb-xs',
                         size === 'small' && 'text-xs',
                         size === 'large' && 'text-base',
-                        disabled && 'text-gray-400',
-                        error && 'text-danger-600'
+                        disabled && 'text-foreground-muted',
+                        error && 'text-danger'
                     )}
                 >
                     {label}
-                    {required && <span className="text-danger-500 ml-xs">*</span>}
+                    {required && <span className="text-danger ml-xs">*</span>}
                 </label>
             )}
 
             <div className="relative inline-block">
                 <div
                     className={cn(
-                        'flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-md bg-gray-50 cursor-pointer transition-all duration-fast text-center',
+                        'flex flex-col items-center justify-center border-2 border-dashed border-border rounded-md bg-background-secondary cursor-pointer transition-all duration-fast text-center',
                         sizeClasses[size],
-                        isDragOver && 'border-primary-500 bg-primary-100',
-                        !isDragOver && !disabled && 'hover:border-primary-500 hover:bg-primary-50',
-                        disabled && 'cursor-not-allowed opacity-60 bg-gray-100',
-                        error && 'border-danger-500 bg-danger-50'
+                        isDragOver && 'border-primary bg-primary-50',
+                        !isDragOver && !disabled && 'hover:border-primary hover:bg-primary-50',
+                        disabled && 'cursor-not-allowed opacity-60 bg-background-secondary',
+                        error && 'border-danger bg-danger-50'
                     )}
                     onClick={handleClick}
                     onDragOver={handleDragOver}
@@ -123,21 +123,21 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                     <Icon
                         name="Upload"
                         size={size === 'small' ? 'small' : size === 'large' ? 'large' : 'medium'}
-                        className="text-gray-400 mb-sm"
+                        className="text-foreground-muted mb-sm"
                     />
 
-                    <div className="text-sm text-gray-600 mb-xs">
+                    <div className="text-sm text-foreground-secondary mb-xs">
                         {dragAndDrop ? 'Arrastra archivos aquí o' : 'Selecciona archivos'}
                     </div>
 
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-foreground-muted">
                         {accept ? `Tipos permitidos: ${accept}` : 'Cualquier tipo de archivo'}
                         {multiple && ' (múltiples archivos)'}
                     </div>
 
                     <button
                         type="button"
-                        className="mt-sm px-md py-sm bg-primary-500 text-white border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-fast hover:not-disabled:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                        className="mt-sm px-md py-sm bg-primary text-primary-foreground border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-fast hover:not-disabled:bg-primary-600 disabled:bg-background-tertiary disabled:cursor-not-allowed"
                         disabled={disabled}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -150,7 +150,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             </div>
 
             {helperText && (
-                <div className={cn('text-sm text-gray-500 mt-xs', error && 'text-danger-600')}>
+                <div className={cn('text-sm text-foreground-muted mt-xs', error && 'text-danger')}>
                     {helperText}
                 </div>
             )}

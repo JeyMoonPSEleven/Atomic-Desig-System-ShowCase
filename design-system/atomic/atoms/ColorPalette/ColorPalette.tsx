@@ -53,7 +53,7 @@ export const ColorPalette = React.memo<ColorPaletteProps>(({
         <div className={cn('flex flex-col gap-xl', className)}>
             {Object.entries(groupedColors).map(([category, categoryColors]) => (
                 <div key={category} className="flex flex-col gap-lg">
-                    <Text variant="large" weight="bold" className="mb-md pb-sm border-b border-border-light text-text-primary">
+                    <Text variant="large" weight="bold" className="mb-md pb-sm border-b border-border-light text-foreground">
                         {category}
                     </Text>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-lg">
@@ -73,7 +73,7 @@ export const ColorPalette = React.memo<ColorPaletteProps>(({
                                                     e.stopPropagation();
                                                     copyToClipboard(color.value, color.name);
                                                 }}
-                                                className="bg-surface-base border border-border-primary text-text-primary transition-all duration-base hover:bg-primary-500 hover:text-text-on-primary hover:border-primary-500"
+                                                className="bg-background border border-border text-foreground transition-all duration-base hover:bg-primary hover:text-primary-foreground hover:border-primary"
                                             >
                                                 {copiedColor === color.name ? (
                                                     <>
@@ -91,10 +91,10 @@ export const ColorPalette = React.memo<ColorPaletteProps>(({
                                     )}
                                 </div>
                                 <div className="p-md flex flex-col gap-xs">
-                                    <Text variant="small" weight="bold" className="text-text-primary">
+                                    <Text variant="small" weight="bold" className="text-foreground">
                                         {color.name}
                                     </Text>
-                                    <div className="px-xs py-xs bg-gray-100 rounded-sm border border-border-light font-mono dark:bg-gray-800 dark:border-gray-600">
+                                    <div className="px-xs py-xs bg-background-secondary rounded-sm border border-border-light font-mono">
                                         <Text variant="caption" color="muted">
                                             {color.value}
                                         </Text>

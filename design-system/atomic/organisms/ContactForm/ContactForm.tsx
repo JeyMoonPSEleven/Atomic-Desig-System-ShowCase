@@ -121,7 +121,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
               transition={{ duration: 0.5 }}
             >
               <div>
-                <Heading level={2} variant="heading" className="text-text-primary mb-sm">
+                <Heading level={2} variant="heading" className="text-foreground mb-sm">
                   {title}
                 </Heading>
                 <Text variant="body" color="secondary">
@@ -136,10 +136,10 @@ export const ContactForm = React.memo<ContactFormProps>(({
                       <Icon name="Phone" size="small" />
                     </div>
                     <div className="flex flex-col gap-xs">
-                      <Text variant="small" className="font-semibold text-text-primary">
+                      <Text variant="small" className="font-semibold text-foreground">
                         Teléfono
                       </Text>
-                      <Text variant="body" className="text-text-secondary">
+                      <Text variant="body" className="text-foreground-secondary">
                         {contactInfo.phone}
                       </Text>
                     </div>
@@ -152,10 +152,10 @@ export const ContactForm = React.memo<ContactFormProps>(({
                       <Icon name="Mail" size="small" />
                     </div>
                     <div className="flex flex-col gap-xs">
-                      <Text variant="small" className="font-semibold text-text-primary">
+                      <Text variant="small" className="font-semibold text-foreground">
                         Email
                       </Text>
-                      <Text variant="body" className="text-text-secondary">
+                      <Text variant="body" className="text-foreground-secondary">
                         {contactInfo.email}
                       </Text>
                     </div>
@@ -168,10 +168,10 @@ export const ContactForm = React.memo<ContactFormProps>(({
                       <Icon name="MapPin" size="small" />
                     </div>
                     <div className="flex flex-col gap-xs">
-                      <Text variant="small" className="font-semibold text-text-primary">
+                      <Text variant="small" className="font-semibold text-foreground">
                         Dirección
                       </Text>
-                      <Text variant="body" className="text-text-secondary">
+                      <Text variant="body" className="text-foreground-secondary">
                         {contactInfo.address}
                       </Text>
                     </div>
@@ -184,10 +184,10 @@ export const ContactForm = React.memo<ContactFormProps>(({
                       <Icon name="Clock" size="small" />
                     </div>
                     <div className="flex flex-col gap-xs">
-                      <Text variant="small" className="font-semibold text-text-primary">
+                      <Text variant="small" className="font-semibold text-foreground">
                         Horario
                       </Text>
-                      <Text variant="body" className="text-text-secondary">
+                      <Text variant="body" className="text-foreground-secondary">
                         {contactInfo.hours}
                       </Text>
                     </div>
@@ -228,7 +228,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
 
                 {/* Name */}
                 <div>
-                  <label className="block mb-xs font-semibold text-text-primary">
+                  <label className="block mb-xs font-semibold text-foreground">
                     Nombre completo *
                   </label>
                   <Input
@@ -242,7 +242,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
 
                 {/* Email */}
                 <div>
-                  <label className="block mb-xs font-semibold text-text-primary">Email *</label>
+                  <label className="block mb-xs font-semibold text-foreground">Email *</label>
                   <Input
                     type="email"
                     value={formData.email}
@@ -254,7 +254,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
 
                 {/* Phone */}
                 <div>
-                  <label className="block mb-xs font-semibold text-text-primary">Teléfono *</label>
+                  <label className="block mb-xs font-semibold text-foreground">Teléfono *</label>
                   <Input
                     type="tel"
                     value={formData.phone}
@@ -266,7 +266,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
 
                 {/* Service */}
                 <div>
-                  <label className="block mb-xs font-semibold text-text-primary">
+                  <label className="block mb-xs font-semibold text-foreground">
                     Tipo de caso *
                   </label>
                   <select
@@ -275,7 +275,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
                     required
                     className={cn(
                       'w-full px-md py-sm border rounded-md',
-                      'border-border bg-background text-text-primary',
+                      'border-border bg-background text-foreground',
                       'focus:outline-none focus:ring-2 focus:ring-primary',
                       'transition-colors'
                     )}
@@ -291,7 +291,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
 
                 {/* Message */}
                 <div>
-                  <label className="block mb-xs font-semibold text-text-primary">
+                  <label className="block mb-xs font-semibold text-foreground">
                     Describe tu caso *
                   </label>
                   <textarea
@@ -300,7 +300,7 @@ export const ContactForm = React.memo<ContactFormProps>(({
                     placeholder="Cuéntanos los detalles de tu accidente..."
                     className={cn(
                       'w-full px-md py-sm border rounded-md',
-                      'border-border bg-background text-text-primary',
+                      'border-border bg-background text-foreground',
                       'focus:outline-none focus:ring-2 focus:ring-primary',
                       'transition-colors resize-vertical min-h-[120px]'
                     )}

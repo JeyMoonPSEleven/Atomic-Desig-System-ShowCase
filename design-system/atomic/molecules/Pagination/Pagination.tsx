@@ -98,7 +98,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         <span
                             key={`ellipsis-${index}`}
                             className={cn(
-                                'flex items-center justify-center text-text-muted',
+                                'flex items-center justify-center text-foreground-muted',
                                 sizeClasses[size]
                             )}
                         >
@@ -114,8 +114,8 @@ export const Pagination: React.FC<PaginationProps> = ({
                             'flex items-center justify-center rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-primary',
                             sizeClasses[size],
                             currentPage === page
-                                ? 'border-primary bg-primary text-text-on-primary'
-                                : 'border-border bg-background hover:bg-background-secondary text-text-primary'
+                                ? 'border-primary bg-primary text-primary-foreground'
+                                : 'border-border bg-background hover:bg-background-secondary text-foreground'
                         )}
                         onClick={() => onPageChange(page)}
                         aria-label={`Page ${page}`}

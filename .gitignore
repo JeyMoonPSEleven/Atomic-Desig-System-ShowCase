@@ -39,3 +39,7 @@ lerna-debug.log*
 # Vite
 .vite
 
+
+
+#Ignore cursor AI rules
+.cursor/rules/codacy.mdc

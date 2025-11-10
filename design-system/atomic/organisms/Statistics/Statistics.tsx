@@ -121,7 +121,7 @@ export const Statistics = React.memo<StatisticsProps>(({
           <Text variant="small" color="accent" className="uppercase tracking-wider font-semibold mb-sm">
             {subtitle}
           </Text>
-          <Heading level={2} variant="heading" className="text-text-primary">
+          <Heading level={2} variant="heading" className="text-foreground">
             {title}
           </Heading>
         </motion.div>
@@ -152,7 +152,7 @@ export const Statistics = React.memo<StatisticsProps>(({
 
               {/* Label */}
               <div className="mb-xs">
-                <Text variant="body" className="font-semibold text-text-primary">
+                <Text variant="body" className="font-semibold text-foreground">
                   {stat.label}
                 </Text>
               </div>
@@ -183,7 +183,7 @@ export const Statistics = React.memo<StatisticsProps>(({
               {/* Description */}
               {stat.description && (
                 <div>
-                  <Text variant="small" className="text-text-secondary">
+                  <Text variant="small" className="text-foreground-secondary">
                     {stat.description}
                   </Text>
                 </div>

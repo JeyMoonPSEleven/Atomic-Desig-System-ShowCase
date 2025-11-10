@@ -24,7 +24,7 @@ export const Avatar: React.FC<AvatarProps> = ({
     };
 
     const avatarClasses = cn(
-        'relative inline-flex items-center justify-center rounded-full bg-background-secondary text-text-secondary font-medium overflow-hidden transition-all',
+        'relative inline-flex items-center justify-center rounded-full bg-background-secondary text-foreground-secondary font-medium overflow-hidden transition-all',
         onClick && !disabled && 'cursor-pointer hover:scale-105 hover:shadow-sm',
         disabled && 'opacity-50 cursor-not-allowed',
 
@@ -46,7 +46,7 @@ export const Avatar: React.FC<AvatarProps> = ({
             />
             <AvatarPrimitive.Fallback asChild>
                 <motion.div
-                    className="w-full h-full flex items-center justify-center bg-primary-100 text-primary-700"
+                    className="w-full h-full flex items-center justify-center bg-primary-50 text-primary-700"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.2 }}

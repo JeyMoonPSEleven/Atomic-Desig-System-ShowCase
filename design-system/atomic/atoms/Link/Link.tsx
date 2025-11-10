@@ -13,12 +13,12 @@ const linkVariants = cva(
     {
         variants: {
             variant: {
-                default: 'text-primary-600 hover:text-primary-800',
-                primary: 'text-primary-600 hover:text-primary-800',
-                secondary: 'text-text-secondary hover:text-text-primary',
-                success: 'text-success-600 hover:text-success-800',
-                danger: 'text-danger-600 hover:text-danger-800',
-                muted: 'text-text-muted hover:text-text-secondary',
+                default: 'text-primary hover:text-primary-700',
+                primary: 'text-primary hover:text-primary-700',
+                secondary: 'text-foreground-secondary hover:text-foreground',
+                success: 'text-success hover:text-success-700',
+                danger: 'text-danger hover:text-danger-700',
+                muted: 'text-foreground-muted hover:text-foreground-secondary',
             },
             size: {
                 small: 'text-sm',

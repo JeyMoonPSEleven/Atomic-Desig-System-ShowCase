@@ -95,7 +95,7 @@ export const AuthenticationTemplate = React.memo<AuthenticationTemplateProps>(({
                 <Logo text={logoText} size="large" />
               </div>
             )}
-            <Heading level={1} variant="heading" className="text-text-primary mb-sm">
+            <Heading level={1} variant="heading" className="text-foreground mb-sm">
               {title || getDefaultTitle()}
             </Heading>
             <Text variant="body" color="secondary">
@@ -154,7 +154,7 @@ export const AuthenticationTemplate = React.memo<AuthenticationTemplateProps>(({
       <motion.div
         className={cn(
           'hidden md:flex items-center justify-center p-xl',
-          'bg-gradient-to-br from-primary to-primary-600 text-text-on-primary',
+          'bg-gradient-to-br from-primary to-primary-600 text-primary-foreground',
           backgroundImage && 'bg-cover bg-center'
         )}
         style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}}

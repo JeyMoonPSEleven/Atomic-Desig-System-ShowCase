@@ -355,41 +355,36 @@
 @layer components {
 
     /* Utilidades adicionales para componentes específicos */
+    /* Container mejorado con tokens del grid system */
     .container {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
-    }
-
-    @media (min-width: 576px) {
-        .container {
-            max-width: var(--container-sm);
-        }
+        padding-left: var(--container-padding-x-mobile);
+        padding-right: var(--container-padding-x-mobile);
     }
 
     @media (min-width: 768px) {
         .container {
-            max-width: var(--container-md);
+            max-width: var(--container-max-width-tablet);
+            padding-left: var(--container-padding-x-tablet);
+            padding-right: var(--container-padding-x-tablet);
         }
     }
 
     @media (min-width: 992px) {
         .container {
-            max-width: var(--container-lg);
+            max-width: var(--container-max-width-desktop);
+            padding-left: var(--container-padding-x-desktop);
+            padding-right: var(--container-padding-x-desktop);
         }
     }
 
     @media (min-width: 1200px) {
         .container {
-            max-width: var(--container-xl);
-        }
-    }
-
-    @media (min-width: 1400px) {
-        .container {
-            max-width: var(--container-xxl);
+            max-width: var(--container-max-width-wide);
+            padding-left: var(--container-padding-x-wide);
+            padding-right: var(--container-padding-x-wide);
         }
     }
 

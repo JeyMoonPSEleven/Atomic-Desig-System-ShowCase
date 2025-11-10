@@ -1,0 +1,53 @@
+{
+  "grid": {
+    "columns": {
+      "mobile": 4,
+      "tablet": 8,
+      "desktop": 12
+    },
+    "gap": {
+      "base": "var(--spacing-md)",
+      "sm": "var(--spacing-sm)",
+      "md": "var(--spacing-md)",
+      "lg": "var(--spacing-lg)",
+      "xl": "var(--spacing-xl)"
+    },
+    "container": {
+      "mobile": {
+        "maxWidth": "100%",
+        "padding": {
+          "horizontal": "var(--spacing-md)",
+          "vertical": "0"
+        }
+      },
+      "tablet": {
+        "maxWidth": "720px",
+        "padding": {
+          "horizontal": "var(--spacing-lg)",
+          "vertical": "0"
+        }
+      },
+      "desktop": {
+        "maxWidth": "1200px",
+        "padding": {
+          "horizontal": "var(--spacing-xl)",
+          "vertical": "0"
+        }
+      },
+      "wide": {
+        "maxWidth": "1400px",
+        "padding": {
+          "horizontal": "var(--spacing-xl)",
+          "vertical": "0"
+        }
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "992px",
+      "wide": "1200px"
+    }
+  }
+}
+

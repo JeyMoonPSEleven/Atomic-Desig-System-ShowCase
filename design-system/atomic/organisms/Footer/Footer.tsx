@@ -79,7 +79,7 @@ export const Footer = React.memo<FooterProps>(({
                 isExternal={true}
                 className={cn(
                   'flex items-center justify-center w-10 h-10 rounded-full',
-                  'bg-background hover:bg-primary text-text-secondary hover:text-text-on-primary',
+                  'bg-background hover:bg-primary text-foreground-secondary hover:text-primary-foreground',
                   'transition-colors border border-border hover:border-primary'
                 )}
                 aria-label={platform}
@@ -97,7 +97,7 @@ export const Footer = React.memo<FooterProps>(({
     <div key={section.title} className="flex flex-col gap-md">
       <Text
         variant="small"
-        className="text-text-primary font-semibold uppercase tracking-wide"
+        className="text-foreground font-semibold uppercase tracking-wide"
       >
         {section.title}
       </Text>
@@ -107,7 +107,7 @@ export const Footer = React.memo<FooterProps>(({
             <Link
               href={link.href}
               isExternal={link.isExternal}
-              className="text-text-secondary hover:text-primary transition-colors text-sm"
+              className="text-foreground-secondary hover:text-primary transition-colors text-sm"
             >
               {link.label}
             </Link>
@@ -130,7 +130,7 @@ export const Footer = React.memo<FooterProps>(({
               {logo || <Logo text={logoText} size="medium" />}
             </div>
 
-            <Text variant="body" className="text-text-secondary max-w-xs">
+            <Text variant="body" className="text-foreground-secondary max-w-xs">
               {description}
             </Text>
 
@@ -145,7 +145,7 @@ export const Footer = React.memo<FooterProps>(({
             <div className="flex flex-col gap-md">
               <Text
                 variant="small"
-                className="text-text-primary font-semibold uppercase tracking-wide"
+                className="text-foreground font-semibold uppercase tracking-wide"
               >
                 Contacto
               </Text>
@@ -155,11 +155,11 @@ export const Footer = React.memo<FooterProps>(({
                     <Icon
                       name="Phone"
                       size="small"
-                      className="text-text-muted mt-1 flex-shrink-0"
+                      className="text-foreground-muted mt-1 flex-shrink-0"
                     />
                     <Link
                       href={`tel:${contact.phone}`}
-                      className="text-text-secondary hover:text-primary transition-colors text-sm"
+                      className="text-foreground-secondary hover:text-primary transition-colors text-sm"
                     >
                       {contact.phone}
                     </Link>
@@ -171,11 +171,11 @@ export const Footer = React.memo<FooterProps>(({
                     <Icon
                       name="Mail"
                       size="small"
-                      className="text-text-muted mt-1 flex-shrink-0"
+                      className="text-foreground-muted mt-1 flex-shrink-0"
                     />
                     <Link
                       href={`mailto:${contact.email}`}
-                      className="text-text-secondary hover:text-primary transition-colors text-sm"
+                      className="text-foreground-secondary hover:text-primary transition-colors text-sm"
                     >
                       {contact.email}
                     </Link>
@@ -187,9 +187,9 @@ export const Footer = React.memo<FooterProps>(({
                     <Icon
                       name="MapPin"
                       size="small"
-                      className="text-text-muted mt-1 flex-shrink-0"
+                      className="text-foreground-muted mt-1 flex-shrink-0"
                     />
-                    <Text variant="body" className="text-text-secondary text-sm">
+                    <Text variant="body" className="text-foreground-secondary text-sm">
                       {contact.address}
                     </Text>
                   </div>
@@ -206,7 +206,7 @@ export const Footer = React.memo<FooterProps>(({
             'pt-lg border-t border-border'
           )}
         >
-          <Text variant="small" className="text-text-muted text-center md:text-left">
+          <Text variant="small" className="text-foreground-muted text-center md:text-left">
             {copyright}
           </Text>
 
@@ -217,7 +217,7 @@ export const Footer = React.memo<FooterProps>(({
                   <Link
                     href={item.href}
                     isExternal={item.isExternal}
-                    className="text-text-muted hover:text-primary transition-colors text-sm"
+                    className="text-foreground-muted hover:text-primary transition-colors text-sm"
                   >
                     {item.label}
                   </Link>

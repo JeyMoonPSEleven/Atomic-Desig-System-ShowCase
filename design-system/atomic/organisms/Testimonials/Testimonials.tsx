@@ -133,7 +133,7 @@ export const Testimonials = React.memo<TestimonialsProps>(({
       )}
 
       {/* Content */}
-      <Text variant="body" className="text-text-primary mb-lg italic">
+      <Text variant="body" className="text-foreground mb-lg italic">
         "{testimonial.content}"
       </Text>
 
@@ -142,17 +142,17 @@ export const Testimonials = React.memo<TestimonialsProps>(({
         <div className="grid grid-cols-2 gap-md mb-lg p-md bg-background-secondary rounded-md border border-border">
           {testimonial.caseType && (
             <div className="flex flex-col gap-xs">
-              <Text variant="small" className="text-text-muted uppercase tracking-wide">
+              <Text variant="small" className="text-foreground-muted uppercase tracking-wide">
                 Tipo de caso:
               </Text>
-              <Text variant="small" className="text-text-primary font-medium">
+              <Text variant="small" className="text-foreground font-medium">
                 {testimonial.caseType}
               </Text>
             </div>
           )}
           {testimonial.compensation && (
             <div className="flex flex-col gap-xs">
-              <Text variant="small" className="text-text-muted uppercase tracking-wide">
+              <Text variant="small" className="text-foreground-muted uppercase tracking-wide">
                 Compensación:
               </Text>
               <Text variant="small" className="text-success font-bold text-lg">
@@ -167,7 +167,7 @@ export const Testimonials = React.memo<TestimonialsProps>(({
       <div className="flex items-center gap-md">
         <Avatar src={testimonial.avatar} alt={testimonial.name} size="medium" />
         <div className="flex flex-col">
-          <Text variant="small" className="font-semibold text-text-primary">
+          <Text variant="small" className="font-semibold text-foreground">
             {testimonial.name}
           </Text>
           <Text variant="small" color="secondary">
@@ -198,7 +198,7 @@ export const Testimonials = React.memo<TestimonialsProps>(({
           <Text variant="small" color="accent" className="uppercase tracking-wider font-semibold mb-sm">
             {subtitle}
           </Text>
-          <Heading level={2} variant="heading" className="text-text-primary">
+          <Heading level={2} variant="heading" className="text-foreground">
             {title}
           </Heading>
         </motion.div>
@@ -226,7 +226,7 @@ export const Testimonials = React.memo<TestimonialsProps>(({
                   className={cn(
                     'absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full',
                     'w-12 h-12 flex items-center justify-center rounded-full',
-                    'bg-background border border-border hover:bg-primary hover:text-text-on-primary',
+                    'bg-background border border-border hover:bg-primary hover:text-primary-foreground',
                     'transition-colors shadow-lg'
                   )}
                   whileHover={{ scale: 1.1 }}
@@ -240,7 +240,7 @@ export const Testimonials = React.memo<TestimonialsProps>(({
                   className={cn(
                     'absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full',
                     'w-12 h-12 flex items-center justify-center rounded-full',
-                    'bg-background border border-border hover:bg-primary hover:text-text-on-primary',
+                    'bg-background border border-border hover:bg-primary hover:text-primary-foreground',
                     'transition-colors shadow-lg'
                   )}
                   whileHover={{ scale: 1.1 }}

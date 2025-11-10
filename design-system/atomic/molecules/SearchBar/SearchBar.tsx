@@ -38,7 +38,7 @@ const inputWrapperVariants = cva(
 );
 
 const inputVariants = cva(
-  'w-full border border-border rounded-md bg-background text-text-primary placeholder:text-text-muted transition-all focus:outline-none focus:border-border-focus focus:shadow-focus disabled:bg-background-secondary disabled:text-text-muted disabled:cursor-not-allowed',
+  'w-full border border-border rounded-md bg-background text-foreground placeholder:text-foreground-muted transition-all focus:outline-none focus:border-border-focus focus:shadow-focus disabled:bg-background-secondary disabled:text-foreground-muted disabled:cursor-not-allowed',
   {
     variants: {
       size: {
@@ -54,7 +54,7 @@ const inputVariants = cva(
 );
 
 const iconVariants = cva(
-  'absolute top-1/2 transform -translate-y-1/2 text-text-muted pointer-events-none',
+  'absolute top-1/2 transform -translate-y-1/2 text-foreground-muted pointer-events-none',
   {
     variants: {
       position: {
@@ -148,7 +148,7 @@ export const SearchBar = React.memo<SearchBarProps>(({
           <motion.button
             type="button"
             onClick={handleClear}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-foreground-muted hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm"
             aria-label="Limpiar búsqueda"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

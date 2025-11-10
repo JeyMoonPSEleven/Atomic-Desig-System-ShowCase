@@ -41,14 +41,14 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                 return (
                     <React.Fragment key={item.id}>
                         {index > 0 && (
-                            <span className="text-text-muted flex-shrink-0">
+                            <span className="text-foreground-muted flex-shrink-0">
                                 {separator || defaultSeparator}
                             </span>
                         )}
 
                         {isLast ? (
                             <span className={cn(
-                                'flex items-center gap-xs text-text-primary font-medium',
+                                'flex items-center gap-xs text-foreground font-medium',
                                 sizeClasses[size]
                             )}>
                                 {item.icon && (
@@ -61,7 +61,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                         ) : (
                             <button
                                 className={cn(
-                                    'flex items-center gap-xs text-text-secondary hover:text-text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm',
+                                    'flex items-center gap-xs text-foreground-secondary hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm',
                                     sizeClasses[size]
                                 )}
                                 onClick={() => handleItemClick(item)}

@@ -95,7 +95,7 @@ export const Rating: React.FC<RatingProps> = ({
             })}
 
             {showValue && (
-                <span className="ml-sm text-sm text-text-secondary">
+                <span className="ml-sm text-sm text-foreground-secondary">
                     {value.toFixed(allowHalf ? 1 : 0)}/{max}
                 </span>
             )}
